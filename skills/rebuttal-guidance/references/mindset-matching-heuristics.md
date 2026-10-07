@@ -1,43 +1,43 @@
-# 审稿人心态识别启发式规则
+# Reviewer Mindset Matching Heuristics
 
-对 Review 文本逐项打分（1=低，5=高），再对照心态簇特征匹配。
+Score the review text item by item (1 = low, 5 = high), then match against the mindset cluster profiles.
 
-## 行为信号评分表
+## Behavior signal scoring table
 
-| 信号 | 高（5）典型表述 | 低（1）典型表述 |
-|------|----------------|----------------|
+| Signal | High (5): typical phrasing | Low (1): typical phrasing |
+|--------|---------------------------|---------------------------|
 | **Openness** | "willing to raise", "if addressed", "open to" | "reject", "not convincing", "final decision" |
 | **Severity** | "fundamental flaw", "fatal issue", "strong reject" | "minor concern", "small issue" |
-| **Constructiveness** | "I suggest", "would strengthen if", "recommend adding" | 纯否定，无改进路径 |
-| **Specificity** | 引用 Table 2、Sec 3、方程编号 | "overall not convincing"，无具体指向 |
-| **Skepticism** | "not convinced", "insufficient evidence", "doubtful" | 中性措辞，未表达怀疑 |
-| **Harshness** | "reject", "misleading", "wrong", "unacceptable" | 礼貌委婉 |
-| **Actionability** | "add experiment", "compare to X", "ablation needed" | 无可执行建议 |
+| **Constructiveness** | "I suggest", "would strengthen if", "recommend adding" | Purely negative, no path to improvement |
+| **Specificity** | Cites Table 2, Sec 3, equation numbers | "overall not convincing", no specific pointers |
+| **Skepticism** | "not convinced", "insufficient evidence", "doubtful" | Neutral wording, no doubt expressed |
+| **Harshness** | "reject", "misleading", "wrong", "unacceptable" | Polite and euphemistic |
+| **Actionability** | "add experiment", "compare to X", "ablation needed" | No actionable suggestions |
 
-## 六类心态速查（当前 6-cluster 数据驱动版）
+## Quick reference for the six mindsets (current data-driven 6-cluster version)
 
-| 心态 | 典型信号组合 | 上分率参考 | 核心应对策略 |
-|------|-------------|-----------|-------------|
-| **精准建设型** | 高 constructiveness + 高 specificity + 高 actionability | ~36% | 逐条结构化回应，引用论文具体位置 |
-| **温和质疑型** | 低 severity + 低 actionability，措辞模糊 | ~19% | 直接消除困惑，自信但不过度解释 |
-| **实验导向型** | 高 evidence_gap 质疑，多次要求对比 | 见 mindset-library | 补实验或解释为何现有结果充分 |
-| **高怀疑严厉型** | 高 skepticism + 高 severity + 打分低 | ~7-15% | 硬证据优先，收窄 claim，接受局限 |
-| **强硬多质疑型** | 高 harshness + 多条 concerns + 篇幅长 | ~12% | 新实验 + 直接引用论文 + 明确承诺 |
-| **其他** | 不明显匹配 | - | 优先识别最突出的单一信号 |
+| Mindset | Typical signal combination | Score-increase rate (reference) | Core response strategy |
+|---------|---------------------------|--------------------------------|------------------------|
+| **Precise constructive** | High constructiveness + high specificity + high actionability | ~36% | Respond point by point in a structured way, citing specific locations in the paper |
+| **Mild skeptic** | Low severity + low actionability, vague wording | ~19% | Remove the confusion directly; be confident without over-explaining |
+| **Experiment-oriented** | Strong evidence_gap doubts, repeated requests for comparisons | See mindset-library | Add experiments, or explain why the existing results suffice |
+| **Highly skeptical and severe** | High skepticism + high severity + low scores | ~7-15% | Hard evidence first, narrow the claims, accept limitations |
+| **Hard-line, many objections** | High harshness + many concerns + long review | ~12% | New experiments + direct citations to the paper + explicit commitments |
+| **Other** | No obvious match | - | Identify the single most prominent signal first |
 
-详细统计（涨分率、Cohen's d 效应）见 [mindset-library.md](mindset-library.md)。
+For detailed statistics (score-increase rates, Cohen's d effects) see [mindset-library.md](mindset-library.md).
 
-## 匹配流程
+## Matching procedure
 
-1. 对 5–7 个信号打分，记录触发该分数的具体原文短语。
-2. 将信号组合与上表对照，选最接近的心态。
-3. 若两个心态接近，标注 **primary + secondary**。
-4. 置信度：3 个以上信号对齐 → **高**；Review 过短/通用 → **低**。
+1. Score 5–7 signals and record the specific phrases in the original text that triggered each score.
+2. Compare the signal combination against the table above and pick the closest mindset.
+3. If two mindsets are close, mark **primary + secondary**.
+4. Confidence: 3 or more aligned signals → **high**; a review that is too short or generic → **low**.
 
-## 置信度对输出的影响
+## How confidence affects the output
 
-| 置信度 | 操作 |
-|--------|------|
-| 高 | 直接使用该心态的 success_patterns 指导策略 |
-| 中 | 列出 primary + secondary，分别给出策略差异说明 |
-| 低 | 以通用策略为主，说明心态判断不确定 |
+| Confidence | Action |
+|------------|--------|
+| High | Use that mindset's success_patterns directly to guide the strategy |
+| Medium | List primary + secondary and explain how the strategies differ |
+| Low | Rely mainly on general strategy and state that the mindset judgment is uncertain |

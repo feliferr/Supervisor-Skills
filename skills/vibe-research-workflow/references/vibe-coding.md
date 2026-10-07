@@ -3,7 +3,7 @@
 ## Table of contents
 
 1. Core shift: from Coder to Commander
-2. Mindset (心法): six principles
+2. Mindset: six principles
 3. Technique 1: Plan Before Execute
 4. Technique 2: Clear Requirements
 5. Technique 3: Small Steps
@@ -30,7 +30,7 @@ What stays the same:
 
 Without these, AI-assisted coding accelerates mistakes.
 
-## 2. Mindset (心法): six principles
+## 2. Mindset: six principles
 
 - **Do what AI cannot, delegate what AI can**.
 - **Ask AI first**.

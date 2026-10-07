@@ -120,7 +120,7 @@ Use this template to concretize your benchmark idea before writing. Fill in each
 | **Rich metadata / reasoning paths** for deep evaluation | |
 | **Key comparison dimensions** with existing benchmarks | |
 
-## 8. Expected Findings (预期洞察)
+## 8. Expected Findings
 
 | Field | Your Answer |
 |-------|-------------|
@@ -189,6 +189,6 @@ For inspiration, consult these three published benchmark papers:
 ### VisJudge-Bench (ICLR 2026)
 - **Gap**: Evaluation checks aesthetics OR accuracy, not their interplay
 - **Paradigm**: Adaptive generation + 3-stage expert annotation
-- **Taxonomy**: 3 dimensions (信达雅) → 6 sub-dimensions
+- **Taxonomy**: 3 dimensions (fidelity, expressiveness, aesthetics) → 6 sub-dimensions
 - **Companion Method**: VisJudge (GRPO)
 - **Key Finding**: Models excel at surface aesthetics but fail at fidelity-expressiveness balance

@@ -2,334 +2,334 @@
 
 ## Table of Contents
 
-- [Cluster 3: 精准建设型](#cluster-3)
-- [Cluster 4: 温和质疑型](#cluster-4)
-- [Cluster 0: 权威否定型](#cluster-0)
-- [Cluster 5: 严厉否定型](#cluster-5)
-- [Cluster 1: 温和建设型](#cluster-1)
-- [Cluster 2: 简洁肯定型](#cluster-2)
+- [Cluster 3: Precise Constructive](#cluster-3-precise-constructive)
+- [Cluster 4: Mild Skeptic](#cluster-4-mild-skeptic)
+- [Cluster 0: Authoritative Negativist](#cluster-0-authoritative-negativist)
+- [Cluster 5: Harsh Dismissive](#cluster-5-harsh-dismissive)
+- [Cluster 1: Gentle Constructive](#cluster-1-gentle-constructive)
+- [Cluster 2: Concise Affirmative](#cluster-2-concise-affirmative)
 
 > Auto-generated from `data/behavior/mindset_library.json`.
 
-模型方法: `behavior_space_kmeans_llm`，共 6 个心态簇。
+Modeling method: `behavior_space_kmeans_llm`, 6 mindset clusters in total.
 
 ---
 
-## Cluster 3: 精准建设型（Precise Constructive）
+## Cluster 3: Precise Constructive
 
-**画像**: 这类审稿人高度关注论文的可执行性和具体细节，倾向于提出明确、可操作的建议，并引用具体文献或方法。他们批评严厉度适中，但建设性极强，容易被说服，核心心态是帮助作者改进论文，而非否定工作。
+**Profile**: These reviewers care deeply about the paper's executability and concrete details, and tend to make clear, actionable suggestions that cite specific literature or methods. Their criticism is moderate in severity but highly constructive, and they are easy to persuade; the core mindset is to help the authors improve the paper rather than to reject the work.
 
-| 指标 | 值 |
-|------|-----|
-| 样本占比 | 9.5% (95 reviews) |
-| 历史涨分率 | 36.1% |
-| 接收率 | 43.2% |
-| 成功 rebuttal 样本 | 44 |
+| Metric | Value |
+|--------|-------|
+| Share of samples | 9.5% (95 reviews) |
+| Historical score-increase rate | 36.1% |
+| Acceptance rate | 43.2% |
+| Successful rebuttal samples | 44 |
 
-### 识别信号
+### Recognition signals
 
-- 指出缺乏具体细节，如参数大小、公式形式或实现步骤
-- 引用具体文献或方法，指出与已有工作的矛盾或不足
-- 提出明确的修改建议，如‘请澄清’、‘需要给出具体形式’
+- Points out missing specifics, such as parameter sizes, formula forms, or implementation steps
+- Cites specific literature or methods and points out contradictions or shortcomings relative to existing work
+- Makes explicit revision suggestions, such as "please clarify" or "a concrete form needs to be given"
 
-### 规则统计差异（Top 3）
+### Rule-statistic differences (Top 3)
 
-- **明确承诺修改**: 成功 65.9% vs 失败 81.8% (Δ -15.9)
-- **直接引用/逐条对应**: 成功 77.3% vs 失败 66.7% (Δ +10.6)
-- **新实验/新结果**: 成功 61.4% vs 失败 51.5% (Δ +9.9)
+- **Explicit commitment to revise**: success 65.9% vs failure 81.8% (Δ -15.9)
+- **Direct quotation / point-by-point response**: success 77.3% vs failure 66.7% (Δ +10.6)
+- **New experiments / new results**: success 61.4% vs failure 51.5% (Δ +9.9)
 
-### 策略向量效应（Cohen's d）
+### Strategy-vector effects (Cohen's d)
 
-**成功组显著更高（Cohen's d）：**
-- `structure_quality`: 成功均值 4.614 / 失败均值 3.157 (d=1.107)
-- `paper_grounding`: 成功均值 4.386 / 失败均值 2.98 (d=1.074)
-- `clarification_quality`: 成功均值 4.636 / 失败均值 3.235 (d=1.07)
+**Significantly higher in the success group (Cohen's d):**
+- `structure_quality`: success mean 4.614 / failure mean 3.157 (d=1.107)
+- `paper_grounding`: success mean 4.386 / failure mean 2.98 (d=1.074)
+- `clarification_quality`: success mean 4.636 / failure mean 3.235 (d=1.07)
 
-**失败组更高（风险维度）：**
-- `vague_future_work`: 成功均值 1.386 / 失败均值 2.333 (d=-0.727)
-- `overpromise_risk`: 成功均值 1.295 / 失败均值 1.745 (d=-0.432)
+**Higher in the failure group (risk dimensions):**
+- `vague_future_work`: success mean 1.386 / failure mean 2.333 (d=-0.727)
+- `overpromise_risk`: success mean 1.295 / failure mean 1.745 (d=-0.432)
 
-### Success patterns（LLM 范式）
+### Success patterns (LLM-derived)
 
-- **结构化直接回应**: 对审稿人的每个弱点逐条编号或使用标题直接回应，引用原文并给出具体解释或证据，避免笼统解释。
-- **具体证据与论文锚定**: 提供新实验、图表或定量结果来支撑论点，并引用论文中的具体位置（如章节、图表）增强可信度。
-- **自信且克制的语气**: 以积极、自信的语气回应，同时保持建设性，避免防御性或过度承诺，在承认局限性时明确已做的改进。
-- **有控制的让步与承诺**: 在承认局限性的同时，明确说明已做的改进或未来方向，避免模糊的‘未来工作’或过度承诺。
+- **Structured, direct response**: Respond to each of the reviewer's weaknesses with a number or heading, quote the original comment, and give a concrete explanation or evidence, avoiding vague explanations.
+- **Specific evidence and paper grounding**: Provide new experiments, figures, or quantitative results to support the argument, and cite specific locations in the paper (such as sections, figures, tables) to increase credibility.
+- **Confident and restrained tone**: Respond in a positive, confident tone while staying constructive, avoiding defensiveness or over-promising, and stating the improvements already made when acknowledging limitations.
+- **Controlled concessions and commitments**: While acknowledging limitations, state clearly the improvements already made or future directions, avoiding vague "future work" or over-promising.
 
-### Failure patterns（LLM 范式）
+### Failure patterns (LLM-derived)
 
-- **模糊未来工作承诺**: 使用‘未来工作’或‘我们计划’等模糊表述，缺乏具体行动或证据，导致审稿人认为回应不充分或回避问题。
-- **过度承诺或泛泛而谈**: 承诺过多改进但未提供具体计划或证据，或仅用一般性陈述回应，让审稿人觉得不切实际或不可信。
-- **缺乏结构的长篇解释**: 回应冗长且未直接引用审稿人的具体问题，使审稿人难以快速定位关键信息，降低说服力。
-- **过度解释或回避核心问题**: 对技术质疑进行冗长理论解释，但未提供新证据或直接承认局限性，使审稿人觉得未被说服。
+- **Vague future-work commitments**: Using vague phrasing such as "future work" or "we plan to" with no concrete action or evidence, leading the reviewer to feel the response is inadequate or evasive.
+- **Over-promising or generalities**: Promising many improvements without a concrete plan or evidence, or responding only with general statements, so the reviewer finds it unrealistic or not credible.
+- **Long explanations without structure**: Lengthy responses that do not directly quote the reviewer's specific questions, making it hard for the reviewer to locate key information quickly and lowering persuasiveness.
+- **Over-explaining or dodging the core issue**: Giving long theoretical explanations to a technical doubt without new evidence or a direct acknowledgment of the limitation, leaving the reviewer unconvinced.
 
 ### Key strategy
 
-结构化直接回应+具体证据+自信克制语气
+Structured direct response + specific evidence + confident, restrained tone
 
 ---
 
-## Cluster 4: 温和质疑型（Mild Skeptic）
+## Cluster 4: Mild Skeptic
 
-**画像**: 这类审稿人态度温和，批评不尖锐，但缺乏具体建议和建设性。他们倾向于表达困惑或指出表面缺失，而非深入分析或提供可执行改进方案。心态上可能对论文持中立或略消极态度，但不愿严厉否定，因此给出中等评分并留下模糊质疑。
+**Profile**: These reviewers are mild in attitude and their criticism is not sharp, but they lack concrete suggestions and constructiveness. They tend to express confusion or point to surface-level omissions rather than analyze in depth or offer actionable improvements. Their mindset may be neutral or slightly negative toward the paper, but they are reluctant to reject it harshly, so they give middling scores and leave vague doubts.
 
-| 指标 | 值 |
-|------|-----|
-| 样本占比 | 20.5% (205 reviews) |
-| 历史涨分率 | 18.7% |
-| 接收率 | 47.3% |
-| 成功 rebuttal 样本 | 99 |
+| Metric | Value |
+|--------|-------|
+| Share of samples | 20.5% (205 reviews) |
+| Historical score-increase rate | 18.7% |
+| Acceptance rate | 47.3% |
+| Successful rebuttal samples | 99 |
 
-### 识别信号
+### Recognition signals
 
-- 使用'I am confused'或'If I’m understanding correctly'等模糊质疑开头
-- 指出问题但未提供具体修改建议或替代方案
-- 评论简短，缺乏对方法或结果的深入技术分析
+- Opens with vague doubts such as 'I am confused' or 'If I’m understanding correctly'
+- Points out problems without giving concrete revision suggestions or alternatives
+- Short comments lacking in-depth technical analysis of the method or results
 
-### 规则统计差异（Top 3）
+### Rule-statistic differences (Top 3)
 
-- **适度承认**: 成功 54.5% vs 失败 66.2% (Δ -11.7)
-- **澄清说明**: 成功 53.5% vs 失败 64.6% (Δ -11.1)
-- **明确承诺修改**: 成功 59.6% vs 失败 49.2% (Δ +10.4)
+- **Moderate acknowledgment**: success 54.5% vs failure 66.2% (Δ -11.7)
+- **Clarifying explanation**: success 53.5% vs failure 64.6% (Δ -11.1)
+- **Explicit commitment to revise**: success 59.6% vs failure 49.2% (Δ +10.4)
 
-### 策略向量效应（Cohen's d）
+### Strategy-vector effects (Cohen's d)
 
-**成功组显著更高（Cohen's d）：**
-- `tone_confidence`: 成功均值 4.535 / 失败均值 3.0 (d=1.246)
-- `direct_address`: 成功均值 4.515 / 失败均值 3.048 (d=1.116)
-- `clarification_quality`: 成功均值 4.404 / 失败均值 2.943 (d=1.148)
+**Significantly higher in the success group (Cohen's d):**
+- `tone_confidence`: success mean 4.535 / failure mean 3.0 (d=1.246)
+- `direct_address`: success mean 4.515 / failure mean 3.048 (d=1.116)
+- `clarification_quality`: success mean 4.404 / failure mean 2.943 (d=1.148)
 
-**失败组更高（风险维度）：**
-- `vague_future_work`: 成功均值 1.616 / 失败均值 2.543 (d=-0.687)
-- `overpromise_risk`: 成功均值 1.404 / 失败均值 2.219 (d=-0.685)
+**Higher in the failure group (risk dimensions):**
+- `vague_future_work`: success mean 1.616 / failure mean 2.543 (d=-0.687)
+- `overpromise_risk`: success mean 1.404 / failure mean 2.219 (d=-0.685)
 
-### Success patterns（LLM 范式）
+### Success patterns (LLM-derived)
 
-- **自信直接回应**: 以高置信度语气直接回应审稿人的质疑，避免含糊其辞或过度道歉，展现对工作的掌控力。
-- **高质量澄清与论文锚定**: 提供清晰、具体的澄清，并紧密引用论文原文、图表、附录或具体实验证据来支撑论点，避免空泛解释。
-- **受控让步与具体证据**: 在承认局限性的同时，立即用具体证据（如新数据、分析或可控改进方案）平衡，避免空洞承诺或过度让步。
+- **Confident, direct response**: Respond to the reviewer's doubts directly in a high-confidence tone, avoiding hedging or excessive apology, and showing command of the work.
+- **High-quality clarification and paper grounding**: Provide clear, specific clarifications and closely cite the paper's text, figures, appendix, or concrete experimental evidence to support the argument, avoiding empty explanations.
+- **Controlled concession with specific evidence**: While acknowledging limitations, immediately balance them with specific evidence (such as new data, analysis, or a controllable improvement plan), avoiding hollow promises or over-conceding.
 
-### Failure patterns（LLM 范式）
+### Failure patterns (LLM-derived)
 
-- **过度让步与模糊未来工作**: 频繁承认不足但未提供具体改进方案，或使用‘未来工作’等模糊承诺，显得缺乏自信和实质行动，削弱说服力。
-- **冗长解释与缺乏聚焦**: 花费过多篇幅澄清误解或补充背景，而非直接解决问题，导致回应冗长、偏离核心，降低审稿人阅读效率。
-- **过度澄清但无论文锚定**: 提供大量澄清性解释，但未引用论文具体内容（如表格、附录），导致回应显得空泛，无法有效说服审稿人。
+- **Over-conceding and vague future work**: Frequently admitting shortcomings without a concrete improvement plan, or using vague commitments such as "future work", which looks unconfident and short on real action and weakens persuasiveness.
+- **Long explanations without focus**: Spending too much space clarifying misunderstandings or adding background instead of addressing the problem directly, producing a long response that drifts from the core and lowers the reviewer's reading efficiency.
+- **Over-clarifying without paper grounding**: Providing lots of clarifying explanation without citing specific content from the paper (such as tables or appendix), so the response feels empty and cannot persuade the reviewer.
 
 ### Key strategy
 
-自信直接回应，锚定论文证据，受控让步并避免模糊承诺。
+Respond confidently and directly, anchor to evidence in the paper, concede in a controlled way, and avoid vague commitments.
 
 ---
 
-## Cluster 0: 权威否定型（Authoritative Negativist）
+## Cluster 0: Authoritative Negativist
 
-**画像**: 这类审稿人自信且挑剔，倾向于以高姿态指出论文的不足，引用具体文献或技术细节来支持其否定性评价。他们写作风格直接、简洁，常使用列表或短句，关注点在于论文的缺陷和局限性，对作者的辩解持低接受度。
+**Profile**: These reviewers are confident and picky, and tend to point out the paper's shortcomings from a position of authority, citing specific literature or technical details to support their negative evaluation. Their writing is direct and concise, often in lists or short sentences, focusing on the paper's flaws and limitations, with low acceptance of the authors' defenses.
 
-| 指标 | 值 |
-|------|-----|
-| 样本占比 | 20.4% (204 reviews) |
-| 历史涨分率 | 14.7% |
-| 接收率 | 27.9% |
-| 成功 rebuttal 样本 | 62 |
+| Metric | Value |
+|--------|-------|
+| Share of samples | 20.4% (204 reviews) |
+| Historical score-increase rate | 14.7% |
+| Acceptance rate | 27.9% |
+| Successful rebuttal samples | 62 |
 
-### 识别信号
+### Recognition signals
 
-- 使用短句或列表形式列出批评点，如'Unclear text encoder'
-- 引用具体文献或技术细节来否定论文的贡献，如'has been studied in [1]'
-- 直接指出论文声称过强或缺乏支持，如'claims are too strong'
+- Lists criticisms in short sentences or list form, such as 'Unclear text encoder'
+- Cites specific literature or technical details to negate the paper's contribution, such as 'has been studied in [1]'
+- Directly states that the paper's claims are too strong or unsupported, such as 'claims are too strong'
 
-### 规则统计差异（Top 3）
+### Rule-statistic differences (Top 3)
 
-- **明确承诺修改**: 成功 51.6% vs 失败 66.2% (Δ -14.6)
-- **直接引用/逐条对应**: 成功 72.6% vs 失败 58.8% (Δ +13.8)
-- **新实验/新结果**: 成功 46.8% vs 失败 40.0% (Δ +6.8)
+- **Explicit commitment to revise**: success 51.6% vs failure 66.2% (Δ -14.6)
+- **Direct quotation / point-by-point response**: success 72.6% vs failure 58.8% (Δ +13.8)
+- **New experiments / new results**: success 46.8% vs failure 40.0% (Δ +6.8)
 
-### 策略向量效应（Cohen's d）
+### Strategy-vector effects (Cohen's d)
 
-**成功组显著更高（Cohen's d）：**
-- `clarification_quality`: 成功均值 4.419 / 失败均值 2.794 (d=1.198)
-- `direct_address`: 成功均值 4.613 / 失败均值 3.0 (d=1.112)
-- `tone_confidence`: 成功均值 4.452 / 失败均值 2.858 (d=1.177)
+**Significantly higher in the success group (Cohen's d):**
+- `clarification_quality`: success mean 4.419 / failure mean 2.794 (d=1.198)
+- `direct_address`: success mean 4.613 / failure mean 3.0 (d=1.112)
+- `tone_confidence`: success mean 4.452 / failure mean 2.858 (d=1.177)
 
-**失败组更高（风险维度）：**
-- `vague_future_work`: 成功均值 1.419 / 失败均值 2.603 (d=-0.801)
-- `overpromise_risk`: 成功均值 1.323 / 失败均值 2.333 (d=-0.767)
+**Higher in the failure group (risk dimensions):**
+- `vague_future_work`: success mean 1.419 / failure mean 2.603 (d=-0.801)
+- `overpromise_risk`: success mean 1.323 / failure mean 2.333 (d=-0.767)
 
-### Success patterns（LLM 范式）
+### Success patterns (LLM-derived)
 
-- **自信直接回应**: 以高置信度、直接的语气正面回应审稿人的具体质疑，避免回避或模糊措辞。
-- **高质量澄清与论文锚定**: 提供清晰、有深度的解释，并紧密锚定论文原文、理论依据或补充实验，展示对工作的深刻理解。
-- **受控让步与具体证据**: 在承认审稿人合理意见或局限性的同时，用具体实验数据、理论分析或新证据支撑核心贡献，避免空洞承诺。
+- **Confident, direct response**: Respond head-on to the reviewer's specific doubts in a high-confidence, direct tone, avoiding evasion or vague wording.
+- **High-quality clarification and paper grounding**: Provide clear, in-depth explanations closely anchored to the paper's text, theoretical basis, or supplementary experiments, showing a deep understanding of the work.
+- **Controlled concession with specific evidence**: While acknowledging the reviewer's reasonable points or the work's limitations, support the core contribution with specific experimental data, theoretical analysis, or new evidence, avoiding hollow promises.
 
-### Failure patterns（LLM 范式）
+### Failure patterns (LLM-derived)
 
-- **模糊未来工作或过度承诺**: 使用‘将在未来工作中解决’或夸大承诺来回应批评，缺乏即时证据或具体计划，被视为回避核心问题。
-- **轻视或辩解式回应**: 对审稿人的具体批评轻描淡写或过度辩解，如‘bug不影响结果’或‘并非追求SOTA’，缺乏严肃对待和详细解释，激化不信任。
-- **弱化新颖性辩护**: 在辩护新颖性时缺乏具体对比或证据，仅强调方法不同，未能有效反驳审稿人对创新性不足的质疑。
+- **Vague future work or over-promising**: Answering criticism with "will be addressed in future work" or exaggerated promises, with no immediate evidence or concrete plan, which is read as dodging the core issue.
+- **Dismissive or defensive responses**: Playing down or over-defending against the reviewer's specific criticism, such as 'the bug does not affect the results' or 'not pursuing SOTA', without taking it seriously or explaining in detail, which deepens distrust.
+- **Weak defense of novelty**: Defending novelty without specific comparisons or evidence, merely stressing that the method is different, and failing to rebut the reviewer's doubt about insufficient innovation.
 
 ### Key strategy
 
-自信直接回应，用论文依据和具体证据支撑，避免模糊承诺
+Respond confidently and directly, support with grounding in the paper and specific evidence, and avoid vague commitments
 
 ---
 
-## Cluster 5: 严厉否定型（Harsh Dismissive）
+## Cluster 5: Harsh Dismissive
 
-**画像**: 这类审稿人倾向于以严厉、否定的语气评价论文，批评力度高但建设性低，很少提供可执行的改进建议，且不易被作者说服。他们关注论文的明显缺陷（如写作质量、动机误导、方法局限），但引用具体细节较少，整体风格简洁、直接、负面。
+**Profile**: These reviewers tend to evaluate the paper in a harsh, dismissive tone, with strong criticism but low constructiveness; they rarely offer actionable suggestions and are hard for authors to persuade. They focus on the paper's obvious defects (such as writing quality, misleading motivation, method limitations) but cite few specific details; the overall style is concise, direct, and negative.
 
-| 指标 | 值 |
-|------|-----|
-| 样本占比 | 9.8% (98 reviews) |
-| 历史涨分率 | 13.8% |
-| 接收率 | 27.6% |
-| 成功 rebuttal 样本 | 30 |
+| Metric | Value |
+|--------|-------|
+| Share of samples | 9.8% (98 reviews) |
+| Historical score-increase rate | 13.8% |
+| Acceptance rate | 27.6% |
+| Successful rebuttal samples | 30 |
 
-### 识别信号
+### Recognition signals
 
-- 使用强烈否定词如'not well-written'、'misleading'、'limited'
-- 批评缺乏建设性，不提供具体改进方向
-- 语气简洁、直接，常以短句或列表形式列出问题
+- Uses strongly negative words such as 'not well-written', 'misleading', 'limited'
+- Criticism lacks constructiveness and gives no concrete direction for improvement
+- Concise, direct tone, often listing problems in short sentences or lists
 
-### 规则统计差异（Top 3）
+### Rule-statistic differences (Top 3)
 
-- **新实验/新结果**: 成功 60.0% vs 失败 34.3% (Δ +25.7)
-- **明确承诺修改**: 成功 43.3% vs 失败 60.0% (Δ -16.7)
-- **澄清说明**: 成功 63.3% vs 失败 77.1% (Δ -13.8)
+- **New experiments / new results**: success 60.0% vs failure 34.3% (Δ +25.7)
+- **Explicit commitment to revise**: success 43.3% vs failure 60.0% (Δ -16.7)
+- **Clarifying explanation**: success 63.3% vs failure 77.1% (Δ -13.8)
 
-### 策略向量效应（Cohen's d）
+### Strategy-vector effects (Cohen's d)
 
-**成功组显著更高（Cohen's d）：**
-- `direct_address`: 成功均值 4.5 / 失败均值 2.691 (d=1.241)
-- `tone_confidence`: 成功均值 4.4 / 失败均值 2.603 (d=1.307)
-- `clarification_quality`: 成功均值 4.333 / 失败均值 2.588 (d=1.212)
+**Significantly higher in the success group (Cohen's d):**
+- `direct_address`: success mean 4.5 / failure mean 2.691 (d=1.241)
+- `tone_confidence`: success mean 4.4 / failure mean 2.603 (d=1.307)
+- `clarification_quality`: success mean 4.333 / failure mean 2.588 (d=1.212)
 
-**失败组更高（风险维度）：**
-- `vague_future_work`: 成功均值 1.433 / 失败均值 2.574 (d=-0.721)
-- `overpromise_risk`: 成功均值 1.533 / 失败均值 2.309 (d=-0.551)
+**Higher in the failure group (risk dimensions):**
+- `vague_future_work`: success mean 1.433 / failure mean 2.574 (d=-0.721)
+- `overpromise_risk`: success mean 1.533 / failure mean 2.309 (d=-0.551)
 
-### Success patterns（LLM 范式）
+### Success patterns (LLM-derived)
 
-- **自信直接回应**: 以自信、直接的语气正面回应审稿人的批评，不回避核心问题，并展示对工作的深刻理解。
-- **具体证据支撑**: 提供新实验、定量结果或具体数据作为证据，而非仅靠解释或承诺，以增强说服力。
-- **结构化清晰阐述**: 用清晰的结构（如分点、标题）组织回应，提升可读性，并针对每个批评点提供高质量澄清。
-- **有控制的让步**: 在承认部分不足的同时，立即转向强调自身贡献或改进，避免全盘否定。
+- **Confident, direct response**: Respond head-on to the reviewer's criticism in a confident, direct tone, not dodging the core issue, and showing a deep understanding of the work.
+- **Backed by specific evidence**: Provide new experiments, quantitative results, or concrete data as evidence rather than relying only on explanations or promises, to increase persuasiveness.
+- **Clear structured exposition**: Organize the response with clear structure (such as bullet points and headings) to improve readability, and give high-quality clarification for each criticism.
+- **Controlled concession**: While acknowledging some shortcomings, immediately turn to stressing one's own contribution or improvements, avoiding wholesale self-rejection.
 
-### Failure patterns（LLM 范式）
+### Failure patterns (LLM-derived)
 
-- **模糊未来工作承诺**: 用“将在未来工作中解决”等模糊承诺代替当前证据，无法满足审稿人对即时验证的要求。
-- **过度承诺风险**: 夸大方法能力或承诺不切实际的效果，引发审稿人更强的不信任。
-- **过度让步与自我否定**: 轻易承认批评并大幅修改术语或定位，削弱了论文的贡献感，让审稿人认为作者缺乏信心。
+- **Vague future-work commitments**: Substituting vague commitments such as "will be addressed in future work" for present evidence, which cannot meet the reviewer's demand for immediate verification.
+- **Over-promising risk**: Exaggerating the method's capabilities or promising unrealistic results, which triggers stronger distrust in the reviewer.
+- **Over-conceding and self-negation**: Readily admitting criticism and substantially revising terminology or positioning, which weakens the sense of contribution and leads the reviewer to think the authors lack confidence.
 
 ### Key strategy
 
-自信直接回应，用具体证据替代模糊承诺
+Respond confidently and directly, and replace vague commitments with specific evidence
 
 ---
 
-## Cluster 1: 温和建设型（Gentle Constructive）
+## Cluster 1: Gentle Constructive
 
-**画像**: 这类审稿人核心心态是支持作者改进论文，而非挑剔缺陷。他们写作风格温和、具体，常以提问或建议形式提出改进点，关注可执行性，批评严厉度低，且容易被说服。他们重视论文的贡献和基线，但会针对细节提出建设性疑问。
+**Profile**: The core mindset of these reviewers is to support the authors in improving the paper rather than to pick at defects. Their writing is gentle and specific, often raising improvement points as questions or suggestions, with a focus on executability, low criticism severity, and ease of persuasion. They value the paper's contribution and baselines, but raise constructive questions about details.
 
-| 指标 | 值 |
-|------|-----|
-| 样本占比 | 34.5% (345 reviews) |
-| 历史涨分率 | 13.4% |
-| 接收率 | 50.4% |
-| 成功 rebuttal 样本 | 177 |
+| Metric | Value |
+|--------|-------|
+| Share of samples | 34.5% (345 reviews) |
+| Historical score-increase rate | 13.4% |
+| Acceptance rate | 50.4% |
+| Successful rebuttal samples | 177 |
 
-### 识别信号
+### Recognition signals
 
-- 使用'It would be helpful if...'或'Is this still true...'等温和提问句式
-- 评论中明确提及'Strengths'和'Questions'，结构清晰且正面开头
-- 建议具体且可操作，如要求补充特定任务或分析，而非泛泛批评
+- Uses gentle question patterns such as 'It would be helpful if...' or 'Is this still true...'
+- The review explicitly mentions 'Strengths' and 'Questions', with a clear structure and a positive opening
+- Suggestions are specific and actionable, such as asking for a particular task or analysis to be added, rather than general criticism
 
-### 规则统计差异（Top 3）
+### Rule-statistic differences (Top 3)
 
-- **新实验/新结果**: 成功 56.5% vs 失败 46.6% (Δ +9.9)
-- **澄清说明**: 成功 60.5% vs 失败 68.6% (Δ -8.1)
-- **适度承认**: 成功 54.2% vs 失败 61.0% (Δ -6.8)
+- **New experiments / new results**: success 56.5% vs failure 46.6% (Δ +9.9)
+- **Clarifying explanation**: success 60.5% vs failure 68.6% (Δ -8.1)
+- **Moderate acknowledgment**: success 54.2% vs failure 61.0% (Δ -6.8)
 
-### 策略向量效应（Cohen's d）
+### Strategy-vector effects (Cohen's d)
 
-**成功组显著更高（Cohen's d）：**
-- `tone_confidence`: 成功均值 4.593 / 失败均值 3.398 (d=1.036)
-- `direct_address`: 成功均值 4.689 / 失败均值 3.512 (d=0.985)
-- `clarification_quality`: 成功均值 4.492 / 失败均值 3.349 (d=0.963)
+**Significantly higher in the success group (Cohen's d):**
+- `tone_confidence`: success mean 4.593 / failure mean 3.398 (d=1.036)
+- `direct_address`: success mean 4.689 / failure mean 3.512 (d=0.985)
+- `clarification_quality`: success mean 4.492 / failure mean 3.349 (d=0.963)
 
-**失败组更高（风险维度）：**
-- `overpromise_risk`: 成功均值 1.35 / 失败均值 2.018 (d=-0.637)
-- `vague_future_work`: 成功均值 1.542 / 失败均值 2.157 (d=-0.51)
+**Higher in the failure group (risk dimensions):**
+- `overpromise_risk`: success mean 1.35 / failure mean 2.018 (d=-0.637)
+- `vague_future_work`: success mean 1.542 / failure mean 2.157 (d=-0.51)
 
-### Success patterns（LLM 范式）
+### Success patterns (LLM-derived)
 
-- **自信直接回应**: 以自信、直接的口吻正面回应审稿人的每个具体问题，避免含糊、回避或过度道歉，增强说服力。
-- **具体证据支撑**: 提供新实验、定量结果、数据或论文中的具体引用作为证据，而非空泛承诺，直接回应审稿人的核心关切。
-- **有控制的让步**: 在承认审稿人观点合理或自身局限性的同时，清晰解释自身立场、核心贡献或已有证据，避免全盘否定。
-- **高质量澄清与结构化**: 提供清晰、结构化的解释，使用标题、编号或分段组织回复，并引用论文具体内容（如表格、章节）来提升可读性和说服力。
+- **Confident, direct response**: Respond head-on to each of the reviewer's specific questions in a confident, direct tone, avoiding vagueness, evasion, or excessive apology, which strengthens persuasiveness.
+- **Backed by specific evidence**: Provide new experiments, quantitative results, data, or specific citations from the paper as evidence rather than empty promises, directly addressing the reviewer's core concern.
+- **Controlled concession**: While acknowledging that the reviewer's view is reasonable or that the work has limitations, clearly explain one's own position, core contribution, or existing evidence, avoiding wholesale self-rejection.
+- **High-quality clarification and structure**: Provide clear, structured explanations, organize the reply with headings, numbering, or paragraphs, and cite specific content from the paper (such as tables and sections) to improve readability and persuasiveness.
 
-### Failure patterns（LLM 范式）
+### Failure patterns (LLM-derived)
 
-- **过度承诺风险**: 承诺过多未来工作或无法立即验证的改进（如'将在未来工作中解决'），缺乏具体行动方案，导致审稿人怀疑可行性。
-- **模糊未来工作**: 使用含糊的未来计划（如'will be explored'）替代具体回应，未能直接解决审稿人的核心关切，削弱说服力。
-- **缺乏自信的辩解**: 语气犹豫或过度道歉，缺乏直接针对性的解释，让审稿人怀疑作者对工作的信心，或回应偏离审稿人具体问题。
+- **Over-promising risk**: Promising too much future work or improvements that cannot be verified immediately (such as 'will be addressed in future work') with no concrete action plan, leading the reviewer to doubt feasibility.
+- **Vague future work**: Using vague future plans (such as 'will be explored') in place of a concrete response, failing to address the reviewer's core concern directly and weakening persuasiveness.
+- **Unconfident justification**: Hesitant tone or excessive apology and a lack of directly targeted explanation, making the reviewer doubt the authors' confidence in the work, or producing a response that drifts from the reviewer's specific question.
 
 ### Key strategy
 
-自信直接回应，用具体证据支撑，避免空泛承诺。
+Respond confidently and directly, support with specific evidence, and avoid empty promises.
 
 ---
 
-## Cluster 2: 简洁肯定型（Concise Affirmative）
+## Cluster 2: Concise Affirmative
 
-**画像**: 这类审稿人倾向于给出简短、笼统的正面评价，很少提供具体细节或可操作的建议。他们心态上可能认为论文已经足够好，无需深入批评，或者自身审稿投入有限，因此只给出概括性反馈。
+**Profile**: These reviewers tend to give short, general positive evaluations and rarely provide specific details or actionable suggestions. Their mindset may be that the paper is already good enough and needs no in-depth criticism, or their own reviewing effort is limited, so they give only summary feedback.
 
-| 指标 | 值 |
-|------|-----|
-| 样本占比 | 5.3% (53 reviews) |
-| 历史涨分率 | None% |
-| 接收率 | 52.8% |
-| 成功 rebuttal 样本 | 27 |
+| Metric | Value |
+|--------|-------|
+| Share of samples | 5.3% (53 reviews) |
+| Historical score-increase rate | None% |
+| Acceptance rate | 52.8% |
+| Successful rebuttal samples | 27 |
 
-### 识别信号
+### Recognition signals
 
-- 评论非常简短，通常只有一两句话
-- 使用笼统的正面词汇如'rigorous'、'strong'、'good'，但缺乏具体支撑
-- 不指出具体问题或改进方向，建设性极低
+- The review is very short, usually only a sentence or two
+- Uses general positive words such as 'rigorous', 'strong', 'good', but lacks specific support
+- Points out no specific problems or directions for improvement; extremely low constructiveness
 
-### 规则统计差异（Top 3）
+### Rule-statistic differences (Top 3)
 
-- **新实验/新结果**: 成功 48.1% vs 失败 65.0% (Δ -16.9)
-- **澄清说明**: 成功 59.3% vs 失败 75.0% (Δ -15.7)
-- **明确承诺修改**: 成功 74.1% vs 失败 60.0% (Δ +14.1)
+- **New experiments / new results**: success 48.1% vs failure 65.0% (Δ -16.9)
+- **Clarifying explanation**: success 59.3% vs failure 75.0% (Δ -15.7)
+- **Explicit commitment to revise**: success 74.1% vs failure 60.0% (Δ +14.1)
 
-### 策略向量效应（Cohen's d）
+### Strategy-vector effects (Cohen's d)
 
-**成功组显著更高（Cohen's d）：**
-- `tone_confidence`: 成功均值 4.731 / 失败均值 3.44 (d=1.136)
-- `clarification_quality`: 成功均值 4.654 / 失败均值 3.48 (d=1.043)
-- `direct_address`: 成功均值 4.808 / 失败均值 3.64 (d=1.008)
+**Significantly higher in the success group (Cohen's d):**
+- `tone_confidence`: success mean 4.731 / failure mean 3.44 (d=1.136)
+- `clarification_quality`: success mean 4.654 / failure mean 3.48 (d=1.043)
+- `direct_address`: success mean 4.808 / failure mean 3.64 (d=1.008)
 
-**失败组更高（风险维度）：**
-- `overpromise_risk`: 成功均值 1.154 / 失败均值 1.6 (d=-0.646)
-- `vague_future_work`: 成功均值 1.423 / 失败均值 1.64 (d=-0.24)
+**Higher in the failure group (risk dimensions):**
+- `overpromise_risk`: success mean 1.154 / failure mean 1.6 (d=-0.646)
+- `vague_future_work`: success mean 1.423 / failure mean 1.64 (d=-0.24)
 
-### Success patterns（LLM 范式）
+### Success patterns (LLM-derived)
 
-- **自信直接回应**: 以自信、肯定的语气直接回应该审稿人的每个问题，避免含糊或防御性语言，强调对问题的清晰理解。
-- **高质量澄清**: 提供清晰、有依据的澄清，结合论文内容或引用文献，而非仅靠新实验，展示对问题的深刻理解。
-- **受控让步**: 在承认局限性的同时，明确展示已做的改进或具体计划，避免空洞承诺，保持对核心贡献的坚持。
-- **论文锚定**: 将回应紧密锚定在论文原文中，引用具体章节、图表或修改位置，增强可信度和可验证性。
-- **结构化回应**: 使用编号或分段结构组织回应，使审稿人易于追踪每个问题的答复，提升清晰度和专业性。
+- **Confident, direct response**: Respond directly to each of this reviewer's questions in a confident, assertive tone, avoiding vague or defensive language and stressing a clear understanding of the issue.
+- **High-quality clarification**: Provide clear, well-grounded clarifications that draw on the paper's content or cited literature rather than relying only on new experiments, showing a deep understanding of the problem.
+- **Controlled concession**: While acknowledging limitations, clearly show the improvements already made or concrete plans, avoiding hollow promises and holding firm on the core contribution.
+- **Paper grounding**: Anchor the response tightly in the paper's text, citing specific sections, figures, tables, or revision locations to increase credibility and verifiability.
+- **Structured response**: Organize the response with numbering or paragraphs so the reviewer can easily track the answer to each question, improving clarity and professionalism.
 
-### Failure patterns（LLM 范式）
+### Failure patterns (LLM-derived)
 
-- **过度承诺风险**: 承诺未来开放代码或进行大量实验，但未在 rebuttal 中提供具体证据，审稿人认为不可靠或分散焦点。
-- **模糊未来工作**: 将关键问题推迟到未来研究（如'will be explored in future'），而非在 rebuttal 中直接解决，显得回避核心质疑。
-- **过度提供新实验但缺乏针对性**: 虽提供更多新实验，但未直接回应核心质疑，反而显得冗余或偏离重点，导致审稿人认为作者未抓住关键。
-- **防御性辩论**: 与审稿人争论术语或定义，而非直接解决问题，导致审稿人认为作者不虚心或回避实质问题。
+- **Over-promising risk**: Promising to open-source code or run many experiments in the future without providing concrete evidence in the rebuttal, so the reviewer finds it unreliable or distracting.
+- **Vague future work**: Deferring key issues to future research (such as 'will be explored in future') rather than resolving them directly in the rebuttal, which looks like dodging the core doubt.
+- **Providing many new experiments without targeting**: Although more new experiments are provided, they do not directly address the core doubt and instead look redundant or off-point, leading the reviewer to think the authors missed the key issue.
+- **Defensive argument**: Arguing with the reviewer over terminology or definitions instead of solving the problem directly, leading the reviewer to think the authors are not open-minded or are dodging the substantive issue.
 
 ### Key strategy
 
-自信直接回应，高质量澄清，受控让步，避免过度承诺
+Respond confidently and directly, give high-quality clarification, concede in a controlled way, and avoid over-promising
 
 ---

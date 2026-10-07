@@ -1,5 +1,5 @@
 ---
-name: deep-research
+name: literature-deep-research
 description: >-
   Runs a deep, survey-grade literature investigation on a research topic:
   freezes research questions, searches from multiple adversarial
@@ -11,7 +11,7 @@ description: >-
 license: CC-BY-NC-SA-4.0
 ---
 
-# Deep Research
+# Literature Deep Research
 
 ## Overview
 

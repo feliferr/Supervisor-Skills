@@ -1,234 +1,232 @@
-# Skills：面向读者的技能导读
+# Skills: a reader's guide to the eleven executable skills
 
-[English](README.en.md) · 中文
+If you clicked into this folder, you probably want to know what the "executable core" of Supervisor-Skills actually is. This README is written for you: **use it as a structured research checklist without installing anything, and as a map to what each skill does, when to trigger it, and how the skills chain together after installation as Agent Skills.**
 
-你点进这个目录，大概是想搞清楚 Supervisor-Skills 的"可执行核心"到底是什么。这份 README 就是为你准备的：**不安装也能当做科研思考清单用，安装为 Agent Skills 后也知道怎么用、什么时候用、用哪一个。**
+## Where this README sits in the project
 
-## 这份 README 在项目里的位置
+Supervisor-Skills is layered by audience:
 
-Supervisor-Skills 的内容被分成三层，各有各的读者：
-
-| 入口 | 读者 | 作用 |
+| Entry point | Audience | Purpose |
 |---|---|---|
-| 顶层 [`README.md`](../README.md) | 第一次打开项目的人 | 为什么做这个项目、教程结构、怎么装 |
-| [`handbook/`](../handbook/) | 想系统学方法论的人 | 六章科研与写作系统指南（理论主轴） |
-| **本文件** | 想直接上手技能的人 | 11 个技能**分别是什么、什么时候用、怎么接龙** |
-| `SKILL.md`（每个技能目录内） | Agent runtime / LLM | 可执行规范：完整性核查、输出格式、模式选项（机器可读，人看有点累） |
+| Top-level [`README.md`](../README.md) | First-time visitors | Why the project exists, tutorial structure, how to install |
+| [`handbook/`](../handbook/) (English) | Readers who want the methodology | Six chapters of research and writing handbook (the theoretical spine) |
+| **This file** | Readers who want the skills directly | **What each of the 11 skills is, when to use it, how it chains with the others** |
+| `SKILL.md` (inside each skill directory) | Agent runtimes / LLMs | Executable spec: integrity gates, output formats, mode options — machine-readable, not optimised for human browsing |
 
-一句话：**handbook 教"道"，SKILL.md 跑"器"，本 README 是"道器之间的桥"。**
+In one line: **the handbook teaches the way, SKILL.md runs the tool, this README is the bridge between them.**
 
-## 两条主线：技术论文 vs Benchmark 论文
+## Two narrative tracks: technical paper vs benchmark paper
 
-11 个技能不是一堆孤立工具，它们对应两条完整的论文生命周期，并补上研究侧的深度调研、产出侧的正文写作与润色，以及 Draw.io 重建这一类执行型作图能力。先定位自己在写哪种论文，再决定从哪个技能入手。
+The eleven skills are not isolated tools. They map to two complete lifecycles of a top-venue paper and add survey-grade research, evidence-gated drafting and polishing, and an execution-oriented Draw.io reconstruction capability. Locate yourself on the right track first, then pick the skill you need.
 
-### 主线一：技术类 / 立场类论文（新方法解决已有问题）
+### Track 1: technical / position paper (new method for an existing problem)
 
-按博士生写第一篇顶会论文的自然节奏，推荐顺序：
+Following the natural order a PhD student takes for their first top-venue paper:
 
-1. **[idea-evaluator](idea-evaluator/SKILL.md)** — 在把一个 idea 立项前做体检，淘汰弱 idea、打磨有潜力的
-2. **[tech-paper-template](tech-paper-template/SKILL.md)** — 动笔写任何段落之前，先锁住完整的论文逻辑骨架
-3. **[intro-drafter](intro-drafter/SKILL.md)** — 把骨架直接写成六段式 Introduction 正文（引用经真实检索核验；也可只要大纲）
-4. **[paper-writer](paper-writer/SKILL.md)** — 其余章节的证据门控正文写作，从单段到整篇，绝不编造
-5. **[figure-designer](figure-designer/SKILL.md)** — 规划 Motivated Example、Solution Overview、Experiment 三张承重图
-6. **[drawio-reconstruction](drawio-reconstruction/SKILL.md)** — 当已有参考图、草图或截图时，重建为可编辑 Draw.io 文件
-7. **[paper-polish](paper-polish/SKILL.md)** — 忠于原意的语言润色：去 AI 腔、把握分寸、中译英
-8. **[pre-submission-reviewer](pre-submission-reviewer/SKILL.md)** — 投稿截止前 3 到 5 天的最终审核
+1. **[idea-evaluator](idea-evaluator/SKILL.md)** — before committing months to an idea, run the reviewer-grade vetting; cut weak ideas early and sharpen the promising ones
+2. **[tech-paper-template](tech-paper-template/SKILL.md)** — before writing any prose, lock the full logical skeleton of the paper
+3. **[intro-drafter](intro-drafter/SKILL.md)** — write the skeleton straight into six paragraphs of Introduction prose with retrieval-verified citations (outline mode on request)
+4. **[paper-writer](paper-writer/SKILL.md)** — evidence-gated drafting for every other section, from one paragraph to the full manuscript, with nothing fabricated
+5. **[figure-designer](figure-designer/SKILL.md)** — design the three load-bearing figures: Motivated Example, Solution Overview, Experimental Results
+6. **[drawio-reconstruction](drawio-reconstruction/SKILL.md)** — when a reference image, draft, or screenshot already exists, rebuild it as editable Draw.io
+7. **[paper-polish](paper-polish/SKILL.md)** — meaning-preserving language polish: AI-tone removal, claim calibration, Chinese-to-English rewriting
+8. **[pre-submission-reviewer](pre-submission-reviewer/SKILL.md)** — the 3-to-5-day deadline-window audit
 
-**两个横向工具**，和上面八步**正交**，不是第 9 步：
+**Two cross-cutting tools**, orthogonal to the eight steps above:
 
-- [deep-research](deep-research/SKILL.md) — 选题前或写作中随时可用的综述级文献调研：多视角检索、逐条引用核验、回答明确研究问题的 survey 报告
-- [vibe-research-workflow](vibe-research-workflow/SKILL.md) — 无论你正在写代码、画图还是写文字，它都会给你 AI 协作的行为规则与工具选择建议
+- [literature-deep-research](literature-deep-research/SKILL.md) — survey-grade literature investigation, usable before topic selection or at any point while writing: multi-perspective search, per-citation verification, a report that answers explicit research questions
+- [vibe-research-workflow](vibe-research-workflow/SKILL.md) — whether you are coding, drawing, or writing at any stage, it gives you AI-collaboration rules and tool picks
 
-### 主线二：Benchmark / Evaluation 类论文
+### Track 2: benchmark / evaluation paper
 
-Benchmark 管线比技术论文更强调阶段先后，每个环节都要先于下一个完成。**[benchmark-paper-template](benchmark-paper-template/SKILL.md)** 是这条主线上的编排器：一份技能内置了"Gap → Design → Construction → Experiments → Paper Structure → Checklist"六阶段的完整思考支撑，按当前阶段自动定位并输出对应的五大支柱（Research Gap / Construction Pipeline / Evaluation Framework / Empirical Findings / 可选的 Companion Method）。
+The benchmark pipeline is more strictly sequential than the technical-paper track: each stage gates the next. **[benchmark-paper-template](benchmark-paper-template/SKILL.md)** is the orchestrator for this track: a single skill bundles the full six-stage workflow (Gap → Design → Construction → Experiments → Paper Structure → Checklist) and produces the five-pillar framework (Research Gap, Construction Pipeline, Evaluation Framework, Empirical Findings, optional Companion Method).
 
-写 Benchmark 论文，起点与终点都是这一个技能；两张核心图的设计需要额外调用 figure-designer，已有参考图或截图的 Draw.io 执行可以交给 drawio-reconstruction，投稿前的细节审核仍然落在 pre-submission-reviewer。
+For a benchmark paper, the starting and ending point are both this one skill; the two core figures additionally need figure-designer, existing reference images or screenshots can be executed with drawio-reconstruction, and the pre-submission audit still lands on pre-submission-reviewer.
 
-### 已经卡在某一环？
+### Already stuck somewhere?
 
-遇到具体瓶颈的读者，跳过顺序，直接去对应章节：
-- 还没有具体想法，想先摸清一个方向的全貌 → **deep-research**
-- Idea 立项没底气 → **idea-evaluator**
-- Introduction 逻辑链断了、或想直接拿到 Intro 正文 → **intro-drafter**
-- 方法章节写不顺 → **tech-paper-template**
-- 想法和结果都有了，想直接写出某个章节的正文 → **paper-writer**
-- 文字生硬、AI 味重、中文稿要改成投稿英文 → **paper-polish**
-- 图画得别扭，不知道用什么工具 → **figure-designer**
-- 已有参考图、论文图、架构图或截图，想生成可编辑 Draw.io → **drawio-reconstruction**
-- 投稿前慌，不知道该查什么 → **pre-submission-reviewer**
-- Benchmark 的 gap 说不清、评估维度理不顺 → **benchmark-paper-template**
-- AI 辅助科研的规则拿不准 → **vibe-research-workflow**
+Readers with a specific bottleneck can skip the reading order and jump straight to the relevant skill:
+- No concrete idea yet, need the lay of the land first → **literature-deep-research**
+- Not confident about greenlighting an idea → **idea-evaluator**
+- Introduction reads like a set of disconnected claims, or you want the Intro prose directly → **intro-drafter**
+- Methodology section will not flow → **tech-paper-template**
+- Idea and results in hand, want a section written → **paper-writer**
+- Prose is stiff, AI-flavored, or a Chinese draft needs submission English → **paper-polish**
+- Figures look clumsy, not sure which tool to use → **figure-designer**
+- Have a reference figure, paper figure, architecture diagram, or screenshot and need editable Draw.io → **drawio-reconstruction**
+- Pre-submission panic, unclear what to check → **pre-submission-reviewer**
+- Cannot articulate the benchmark gap or organise evaluation dimensions → **benchmark-paper-template**
+- Unsure how to delegate to AI without diluting academic judgment → **vibe-research-workflow**
 
-## 11 张技能卡片
+## The eleven skill cards
 
-每张卡把 SKILL.md 的严谨定义翻译成"人话"，附带配套的 handbook 章节以及与其它技能的接龙关系。
+Each card translates the SKILL.md spec into plain-reader language, adds the matching handbook chapters, and notes the upstream/downstream skills.
 
-### idea-evaluator — Idea 的"投稿前体检"
+### idea-evaluator — pre-submission vetting for your idea
 
-- **定位**：把资深导师评估一个 idea 时的隐式流程，显式化成四层可核查的检查单。
-- **什么时候触发**：
-  - 学生提出一个 idea，想在投入几个月之前知道"值不值得做"
-  - 审稿式自查：现有工作是否已经覆盖、能不能落到 Higher/Faster/Stronger/Cheaper/Broader 某个维度上、学生自身能力与时间窗是否匹配
-  - 对一份 idea 列表做粗筛，保留前三，砍掉其余
-- **四层检查**：致命缺陷审计（Fatal Flaws，早期闸门）→ Idea 生命周期与学生能力匹配 → 五维打分（更高更快更强更省更广）→ 范式跃迁探测与可行性核查。次序不能换——一个七分的"Higher"分数，在一个 CRITICAL 的 Fatal Flaw 面前毫无意义。
-- **产出**：每条证据驱动的打分、CRITICAL / MAJOR / MINOR 的缺陷严重性分级、一份 "Reject and Pivot" 或 "Proceed with Guardrails" 的结论。
-- **对应 handbook 章节**：[2.1 Idea 生命周期](../handbook/02_Idea_Generation/2.1_Idea的生命周期与能力匹配.md) · [2.2 更高更快更强](../handbook/02_Idea_Generation/2.2_想Idea的思路_更高更快更强.md) · [2.3 颠覆式创新](../handbook/02_Idea_Generation/2.3_进阶_如何做颠覆式创新.md)
-- **下游接龙**：体检通过 → **tech-paper-template** 锁骨架；范式探测信号为"颠覆候选"时，先去看 handbook 2.3。
+- **Positioning**: externalises the implicit check that experienced advisors run silently when a student proposes an idea, into four layers of reviewable gates.
+- **When to trigger**:
+  - Student proposes an idea and wants to know, before committing months, whether it is worth pursuing
+  - Reviewer-style self-audit: is this already covered by prior work; does it land cleanly on Higher / Faster / Stronger / Cheaper / Broader; does the student's capability and timeline fit
+  - Rough-filter a list of ideas, keep the top three, cut the rest
+- **Four layers**: fatal-flaws audit (early short-circuit) → idea lifecycle and student capability matching → five-dimension scoring (Higher, Faster, Stronger, Cheaper, Broader) → paradigm-shift probe plus feasibility. The order matters — a seven-out-of-ten "Higher" score means nothing if a CRITICAL fatal flaw is sitting underneath it.
+- **Output**: evidence-grounded scores on every axis, severity tagging (CRITICAL / MAJOR / MINOR), and a verdict of "Reject and Pivot" or "Proceed with Guardrails".
+- **Matching handbook chapters**: [2.1 Idea lifecycle](../handbook/02_Idea_Generation/2.1_idea-lifecycle-and-capability-matching.md) · [2.2 Higher-Faster-Stronger](../handbook/02_Idea_Generation/2.2_higher-faster-stronger.md) · [2.3 Disruptive innovation](../handbook/02_Idea_Generation/2.3_disruptive-innovation.md)
+- **Downstream**: once the idea passes, hand off to **tech-paper-template** to lock the skeleton. When the paradigm probe flags disruptive potential, read handbook 2.3 first.
 
-### deep-research — 综述级文献深度调研
+### literature-deep-research — survey-grade literature investigation
 
-- **定位**：像写一篇真正的 survey paper 那样调研一个方向：先冻结 2-3 个具体研究问题，再从主流方 / 批评方 / 相邻领域 / 方法论 / 应用政策 3-5 个视角独立检索，逐条核验引用真伪，按 MECE 分类综合、句内交叉对比，最后逐条回答研究问题。
-- **什么时候触发**：
-  - 还没有具体想法，想先搞清一个方向的全貌、关键工作、争议和空白
-  - idea-evaluator 或写作过程中发现需要先补全文献地图
-  - 需要一份引用可靠、有判断力的调研报告，而不是搜索结果罗列
-- **关键纪律**：编造引用零容忍（灰区 = 不使用）；矛盾如实呈现、不平均掉；判断强度不超过证据强度；六维内部门禁（角度/覆盖/引用/分类/分寸/交织）不过就回炉。
-- **产出**：survey 结构的调研报告（摘要、研究问题、方法、分类框架、分支分析与对比表、综合讨论、开放问题、逐条回答 RQ 的结论、经核验的参考文献）。
-- **上下游**：下游接 **idea-evaluator**（方向摸清后评具体想法）或 **paper-writer**（Related Work 的文献池）。
+- **Positioning**: investigates a research direction the way a real survey paper is written: freeze two or three explicit research questions, search independently from three to five perspectives (mainstream, critics, adjacent fields, methodology, application and policy), verify every citation, synthesize into a MECE taxonomy with in-sentence cross-comparison, and answer the research questions one by one.
+- **When to trigger**:
+  - No concrete idea yet; you need the field's key works, debates, and gaps mapped first
+  - idea-evaluator or a drafting skill reveals the literature map is missing
+  - You need a reliable, judgment-bearing survey report, not a list of search results
+- **Key discipline**: zero tolerance for invented citations (grey zone means unused); contradictions presented with condition analysis, never averaged; claim strength capped by evidence strength; six internal quality gates (angle, coverage, citation, taxonomy, calibration, weaving) send failures back for targeted re-scouting.
+- **Output**: a survey-structured report: abstract, research questions, methodology, taxonomy, branch analyses with comparison tables, cross-branch synthesis, open problems, conclusions answering each RQ, verified references.
+- **Downstream**: **idea-evaluator** (evaluate a specific idea once the landscape is clear) or **paper-writer** (the literature pool for Related Work).
 
-### tech-paper-template — 下笔前的"逻辑骨架"
+### tech-paper-template — the logical skeleton before you write
 
-- **定位**：用思考模板表格，把论文的 Background、Limitations、Key Idea/Goal、Challenges、Methodology Modules、Contributions 强制对齐。
-- **什么时候触发**：
-  - idea 已通过评估，动笔前想先把故事线理清楚
-  - 合作者对"要不要加一个模块 X"意见不一致——让表格仲裁
-  - 写到一半发现方法与 Motivation 接不上——回表格重排
-- **关键纪律**：技术类论文 vs 新问题/设定类论文的**论文定位**必须先选一次；挑战与模块一一对应，数量不超过三；贡献点必须指向具体章节编号。
-- **产出**：一张完整的 thinking-template 表 + 自洽性核查（"挑战—模块—贡献"三路互锁）+ 下游 intro-drafter 直接可用的结构化输入。
-- **对应 handbook 章节**：[3.1 完成一篇科研论文你需要做几件事情](../handbook/03_Paper_Writing/3.1_完成一篇科研论文你需要做几件事情.md) · [3.3 技术类 Full Paper 思考模板](../handbook/03_Paper_Writing/3.3_技术类Full_Paper思考模板.md)
-- **上下游**：上游 **idea-evaluator**；下游 **intro-drafter**（把骨架翻译成六段式 Intro）和 **figure-designer**（锁定 Solution Overview 图）。
+- **Positioning**: forces alignment across Background, Limitations, Key Idea / Goal, Challenges, Methodology Modules, and Contributions, via a thinking-template table.
+- **When to trigger**:
+  - The idea has passed evaluation; before any prose, you want the story straight
+  - Co-authors disagree on whether module X belongs — let the table arbitrate
+  - Halfway through drafting you notice the method does not actually respond to the motivation — come back to the table and reshuffle
+- **Key discipline**: choose the paper's **positioning type** once (technical / position paper vs new-problem / new-setting paper); enforce the challenge-to-module one-to-one mapping with at most three entries; every contribution bullet must cite the section that delivers it.
+- **Output**: a completed thinking-template table + self-consistency audit (the "challenge—module—contribution" three-way interlock) + structured input ready for intro-drafter.
+- **Matching handbook chapters**: [3.1 Essentials of a research paper](../handbook/03_Paper_Writing/3.1_the-essentials-of-a-research-paper.md) · [3.3 Technical paper template](../handbook/03_Paper_Writing/3.3_technical-paper-template.md)
+- **Up- and downstream**: upstream is **idea-evaluator**; downstream is **intro-drafter** (turn the skeleton into a six-paragraph outline) and **figure-designer** (fix the Solution Overview figure around the module graph).
 
-### intro-drafter — 六段式 Introduction 正文
+### intro-drafter — six paragraphs of Introduction prose
 
-- **定位**：以 Background、Limitations、Goal、Challenges、Solution Overview、Contributions 六段流程图为**内部脚手架**，直接产出六段流畅的 Introduction 正文；五条跨段逻辑链在动笔前静默核查，交付物里没有任何脚手架痕迹。
-- **什么时候触发**：
-  - tech-paper-template 的骨架做完，要把 Intro 写出来
-  - 手上有一段研究想法，想直接拿到成段的 Intro 文字而不是要点列表
-  - 只想要大纲也可以：明确说"只要大纲"，会切回经典大纲输出
-- **关键纪律**：引用先检索后写（完整 Intro 通常织入 15-25 条经核验的文献）；Running Example 绝不编造——用户没给真实案例就用抽象描述写背景段，并在尾注里请用户提供；遵守与 paper-writer 共享的证据纪律（零占位标签、用户没给的细节不写）。
-- **产出**：六段 Introduction 正文 + References 列表（编号双向对应）+ 至多三行的尾注提醒。
-- **对应 handbook 章节**：[3.2 Introduction 写作的思考模型](../handbook/03_Paper_Writing/3.2_Introduction写作的思考模型.md)
-- **上下游**：上游 **tech-paper-template**；下游 **figure-designer**（第一段的 Running Example 要变成 Motivated Example 图）和 **paper-writer**（其余章节）。
+- **Positioning**: uses the six-paragraph flowchart (Background, Limitations, Goal, Challenges, Solution Overview, Contributions) as an **internal scaffold** and delivers six paragraphs of flowing Introduction prose; the five cross-paragraph chains are checked silently before writing, and no scaffolding appears in the output.
+- **When to trigger**:
+  - The tech-paper-template skeleton is done; you want the Introduction written
+  - You have a paragraph of research thinking and want finished prose, not bullets
+  - You only want the skeleton: say "just the outline" and the classic outline mode returns
+- **Key discipline**: search before writing (a full Introduction typically weaves 15-25 verified references); running examples are never fabricated (absent a real case from the user, the background paragraph stays abstract and the closing note asks for one); the shared evidence discipline with paper-writer applies (zero placeholder tags, no invented specifics).
+- **Output**: six paragraphs of Introduction prose + a References list matched bidirectionally + at most three lines of closing notes.
+- **Matching handbook chapter**: [3.2 Introduction writing flowchart](../handbook/03_Paper_Writing/3.2_introduction-writing-flowchart.md)
+- **Up- and downstream**: upstream is **tech-paper-template**; downstream is **figure-designer** (the Running Example from paragraph 1 becomes the Motivated Example figure) and **paper-writer** (every other section).
 
-### paper-writer — 证据门控的论文正文写作
+### paper-writer — evidence-gated paper drafting
 
-- **定位**：把想法和材料直接写成可投稿的论文正文，单段到整篇都行；每写一个字都要能追溯到证据。实质内容（想法、设计、结果、结论）归作者，语言实现归技能。
-- **什么时候触发**：
-  - "帮我把这个想法写成一段 Discussion / Methods / Related Work"
-  - "写一篇完整的论文初稿"（STEM Intro 自动转交 intro-drafter）
-  - 非 STEM 学科（人文 / 社科 / 经济 / 法学）的章节写作——按 CER 骨架逐段规划
-- **关键纪律**：事实性声明只有三种合法来源（用户材料 / 本次检索核验过的文献 / 不含数字人名比较的领域常识），模型记忆永远不算；输出零占位标签，缺证据的唯一路径是检索、改写或删除；引用密度先检索后写；整篇 / 终稿 / 引用满 3 条时触发**独立引用核查**（全新上下文的子代理逐条核验，环境不支持则诚实降级并披露）。
-- **产出**：干净的章节或全文正文 + References（双向对应）+ 至多三行说明；整篇任务附证据台账与章节蓝图两份工作文件（不嵌入正文）。
-- **对应 handbook 章节**：[3.1 全流程](../handbook/03_Paper_Writing/3.1_完成一篇科研论文你需要做几件事情.md) · [3.3 技术类模板](../handbook/03_Paper_Writing/3.3_技术类Full_Paper思考模板.md) · [3.5 写作细节](../handbook/03_Paper_Writing/3.5_写作细节与Checklist.md)
-- **上下游**：上游 **tech-paper-template**（骨架）与 **intro-drafter**（Intro 正文）；下游 **paper-polish**（磨语言）与 **pre-submission-reviewer**（投稿前审核）。
+- **Positioning**: turns ideas and materials into submittable paper prose, one paragraph or a full manuscript; every written word must trace to evidence. The substance (ideas, designs, results, conclusions) belongs to the author; the skill owns only its linguistic realization.
+- **When to trigger**:
+  - "Write this idea into a Discussion / Methods / Related Work paragraph"
+  - "Draft the full first version of the paper" (STEM Introductions route to intro-drafter automatically)
+  - Non-STEM sections (humanities, social science, economics, law), planned paragraph by paragraph on a CER skeleton
+- **Key discipline**: factual claims have exactly three legitimate origins (user materials, this session's verified retrieval, or field common knowledge with no numbers, names, or comparisons), never model memory; zero placeholder tags, the only resolution path is search, rewrite, or delete; full papers, final mode, or three-plus citations trigger the **independent citation verification** (a fresh-context sub-agent checks every entry, with honest degradation and disclosure when the environment lacks sub-agents).
+- **Output**: clean section or manuscript prose + a bidirectionally matched References list + at most three lines of notes; full-paper runs keep an evidence map and chapter blueprint as separate working files.
+- **Matching handbook chapters**: [3.1 Essentials](../handbook/03_Paper_Writing/3.1_the-essentials-of-a-research-paper.md) · [3.3 Technical paper template](../handbook/03_Paper_Writing/3.3_technical-paper-template.md) · [3.5 Writing details](../handbook/03_Paper_Writing/3.5_writing-details-and-checklist.md)
+- **Up- and downstream**: upstream is **tech-paper-template** (skeleton) and **intro-drafter** (Introduction prose); downstream is **paper-polish** (language) and **pre-submission-reviewer** (final audit).
 
-### benchmark-paper-template — Benchmark 论文的一站式编排器
+### benchmark-paper-template — the all-in-one orchestrator for benchmark papers
 
-- **定位**：专为 Benchmark / Evaluation 类论文设计，把五大支柱（Research Gap、Construction Pipeline、Evaluation Framework、Empirical Findings、可选的 Companion Method）和六阶段工作流打包为一个技能。
-- **什么时候触发**：
-  - 开始一个 Benchmark 项目，从"为什么需要这个 Benchmark"开始思考
-  - 已经收了数据，但 evaluation 维度定义模糊
-  - 实验做完，不确定 Finding-X 是否"够深"
-  - 投稿前对照 Benchmark Paper Checklist 走一遍
-- **六阶段**：Gap Analysis → Design → Construction Pipeline → Experiments → Paper Structure → Checklist。技能会**先识别当前所处阶段**，再路由到对应的思考支撑。
-- **产出**：阶段性交付物 + 六段式 Introduction 逻辑链 + Section 2-7 骨架 + 投稿前检查单。
-- **对应 handbook 章节**：[3.4 Benchmark 与 Evaluation 类论文思考模板](../handbook/03_Paper_Writing/3.4_Benchmark与Evaluation类论文思考模板.md) · [6.3 LEAD 写作剖析](../handbook/06_Case_Studies/6.3_VLDB_2026_LEAD写作剖析.md)
-- **横向接龙**：figure-designer（两张核心图）· pre-submission-reviewer（细节审核）。
+- **Positioning**: built specifically for benchmark / evaluation papers; bundles the five-pillar framework (Research Gap, Construction Pipeline, Evaluation Framework, Empirical Findings, optional Companion Method) plus the six-stage workflow into a single skill.
+- **When to trigger**:
+  - Starting a benchmark project, thinking from "why does this benchmark need to exist"
+  - Data has been collected, but the evaluation dimensions are fuzzy
+  - Experiments are done; unclear whether each Finding-X insight is deep enough
+  - Working through the benchmark-paper checklist before submission
+- **Six stages**: Gap Analysis → Design → Construction Pipeline → Experiments → Paper Structure → Checklist. The skill **first detects the current stage**, then routes to the relevant thinking support.
+- **Output**: per-stage deliverables + a six-part Introduction logic chain + a Section 2-7 skeleton + a pre-submission checklist.
+- **Matching handbook chapters**: [3.4 Benchmark and evaluation paper template](../handbook/03_Paper_Writing/3.4_benchmark-paper-template.md) · [6.3 LEAD writing analysis](../handbook/06_Case_Studies/6.3_vldb2026-lead-analysis.md)
+- **Cross-link**: figure-designer (the two core figures) · pre-submission-reviewer (final audit).
 
-### figure-designer — 三张承重图的设计顾问
+### figure-designer — the design advisor for the three load-bearing figures
 
-- **定位**：围绕技术论文中三张决定叙事重量的图——Motivated Example（Figure 1）、Solution Overview（方法章节）、Experimental Results——给出设计范式、排版规则、工具选型建议。
-- **什么时候触发**：
-  - Intro 大纲锁定后，要把第一段的 Running Example 翻成 Motivated Example 图
-  - 方法章节写之前，要决定 Solution Overview 图按什么逻辑切分
-  - 实验做完，主表太挤、想把主结果用图呈现
-  - 纠结"用 PPT 还是 TikZ 还是 Inkscape"
-- **关键原则**：一张图只讲一件事；坐标轴、图例、配色的顶会审美；实验图必须直接回应 Introduction 里的 Motivation。
-- **产出**：针对每张图的设计要点、常见反例、工具选择、可复用的布局模板。
-- **对应 handbook 章节**：[4.1 Motivated Example Figure](../handbook/04_Scientific_Plotting/4.1_Motivated_Example_Figure.md) · [4.2 Solution Overview Figure](../handbook/04_Scientific_Plotting/4.2_Solution_Overview_Figure.md) · [4.3 Experimental Results Figure](../handbook/04_Scientific_Plotting/4.3_Experimental_Results_Figure.md) · [4.4 绘图 Checklist](../handbook/04_Scientific_Plotting/4.4_绘图Checklist与工具速查表.md)
-- **上下游**：上游 **intro-drafter**（Running Example 定了图才好画）和 **tech-paper-template**（模块结构定了 Solution Overview 的骨架）；下游 **pre-submission-reviewer**（图的质量进入最终审核）。
+- **Positioning**: focuses on the three figures that carry the narrative weight of a technical paper — Motivated Example (Figure 1), Solution Overview (methodology), and Experimental Results — with design paradigms, layout rules, and tool-selection guidance.
+- **When to trigger**:
+  - Introduction outline is locked; you need to turn paragraph 1's Running Example into Figure 1
+  - Before writing the methodology, decide how the Solution Overview figure should partition the module graph
+  - Experiments are done, the main table is crowded, and a figure would tell the story better
+  - Torn between PowerPoint, TikZ, and Inkscape
+- **Key principles**: one figure says one thing; axis / legend / palette at top-venue aesthetic standards; the Experimental Results figure must speak directly back to the Introduction's motivation.
+- **Output**: per-figure design notes, common anti-patterns, tool picks, and reusable layout templates.
+- **Matching handbook chapters**: [4.1 Motivated example figure](../handbook/04_Scientific_Plotting/4.1_Motivated_Example_Figure.md) · [4.2 Solution overview figure](../handbook/04_Scientific_Plotting/4.2_Solution_Overview_Figure.md) · [4.3 Experimental results figure](../handbook/04_Scientific_Plotting/4.3_Experimental_Results_Figure.md) · [4.4 Plotting checklist](../handbook/04_Scientific_Plotting/4.4_plotting-checklist-and-tools.md)
+- **Up- and downstream**: upstream is **intro-drafter** (running example locks Figure 1) and **tech-paper-template** (module graph locks the Solution Overview figure); downstream is **pre-submission-reviewer** (figure quality is part of the final audit).
 
-### drawio-reconstruction — 把参考图重建成可编辑 Draw.io
+### drawio-reconstruction — rebuild reference figures as editable Draw.io
 
-- **定位**：执行型作图技能，把参考图、论文图、架构图、幻灯片图、UI 截图或图片文件夹重建为 `.drawio` 文件，并导出 PNG 预览与审计记录。
-- **什么时候触发**：
-  - 已经有一张目标风格明确的参考图，希望得到可编辑 Draw.io 版本
-  - 需要批量把多张图重建为 `.drawio`，并逐张做视觉一致性检查
-  - 想保留文字和结构的可编辑性，同时对复杂图标、截图、视觉隐喻使用裁剪或透明 PNG 保真
-- **关键纪律**：视觉保真优先于语义近似；脚本检查只能证明 XML 与导出有效，最终质量必须对照参考图做视觉审计。
-- **产出**：`.drawio` 源文件、PNG 预览、复杂或批量任务的 audit 文件，以及未解决视觉差异的明确记录。
-- **来源与授权**：改编自 [drawio-reconstruction-skill](https://github.com/sxy1499894281/drawio-reconstruction-skill)，保留 MIT License。
-- **上下游**：上游可以接 **figure-designer** 的设计方案或用户已有参考图；下游进入 **pre-submission-reviewer** 的图表质量检查。
+- **Positioning**: an execution-oriented figure skill that reconstructs reference images, paper figures, architecture diagrams, slide diagrams, UI screenshots, or image folders into `.drawio` files with PNG previews and audit notes.
+- **When to trigger**:
+  - A target-style reference image already exists and the user needs an editable Draw.io version
+  - Multiple figures need batch reconstruction into `.drawio`, each with visual-consistency checks
+  - Text and structure should stay editable, while complex icons, screenshots, visual metaphors, and dense artwork should use faithful crops or transparent PNGs
+- **Key discipline**: visual fidelity beats semantic approximation; script checks only prove XML and export validity, while final quality requires visual comparison against the reference.
+- **Output**: `.drawio` source files, PNG previews, audit files for complex or batch tasks, and explicit notes for unresolved visual differences.
+- **Attribution and license**: adapted from [drawio-reconstruction-skill](https://github.com/sxy1499894281/drawio-reconstruction-skill), retaining the MIT License.
+- **Up- and downstream**: upstream can be a **figure-designer** plan or any user-provided reference image; downstream is **pre-submission-reviewer** for figure-quality review.
 
-### paper-polish — 忠于原意的语言润色
+### paper-polish — meaning-preserving language polish
 
-- **定位**：帮作者把**他想说的话**说得更好，不是换成润色者想说的话。改语法、调语序、去 AI 腔、把握措辞分寸、中文稿改写成投稿级英文。
-- **什么时候触发**：
-  - "帮我润色这段 / 改自然一点 / 去掉 AI 味"
-  - "我中文写的，帮我翻成能投稿的英文"
-  - "这句是不是说得太满了"
-- **关键纪律**：任何可能改变科学含义的改动绝不默默做掉——逐条列出原句 / 改句 / 理由请作者确认；绝不补原文没有的数据、公式、引用、机制解释；默认保守（能小改就不大改）；在文件上工作时直接改文件，版本 diff 就是改动清单。
-- **产出**：干净的润色正文 + 3-5 条主要改动说明（含含义风险项对照）。
-- **对应 handbook 章节**：[3.5 写作细节与 Checklist](../handbook/03_Paper_Writing/3.5_写作细节与Checklist.md)
-- **上下游**：上游 **paper-writer** / **intro-drafter**（起草后的打磨）；发现问题超出语言层（逻辑断裂、核心主张存疑）时转 **paper-writer** 重写或 **pre-submission-reviewer** 评审。
+- **Positioning**: helps the author say **what the author means**, better, instead of replacing it with what the editor would have said. Grammar, word order, AI-tone removal, claim calibration, and Chinese-to-English rewriting at submission quality.
+- **When to trigger**:
+  - "Polish this passage / make it sound natural / strip the AI flavor"
+  - "I wrote this in Chinese; turn it into submission-ready English"
+  - "Is this claim too strong?"
+- **Key discipline**: no edit that might change scientific meaning is ever made silently; such edits ship as a before/after list for the author to confirm; nothing absent from the original is added (no data, equations, citations, or mechanisms); conservative by default; when working on files, the edits land in the files and the version diff is the change record.
+- **Output**: clean polished prose + three to five change notes, meaning-risk items listed side by side.
+- **Matching handbook chapter**: [3.5 Writing details and checklist](../handbook/03_Paper_Writing/3.5_writing-details-and-checklist.md)
+- **Up- and downstream**: upstream is **paper-writer** / **intro-drafter** (drafts to polish); problems beyond language (broken logic, a doubtful core claim) route to **paper-writer** for redrafting or **pre-submission-reviewer** for a verdict.
 
-### pre-submission-reviewer — 顶会审稿人视角的最终审核
+### pre-submission-reviewer — the top-venue reviewer's final audit
 
-- **定位**：模拟顶会审稿人，从宏观逻辑、写作细节、英语语法、LaTeX 排版、图表质量五个维度批改草稿。
-- **什么时候触发**：
-  - 投稿截止前 3 到 5 天的 final pass
-  - 合作者改不动了，需要一个"冷眼"的完整体检
-  - Rebuttal 写完，想对照常见的"审稿人会挑什么毛病"再扫一遍
-- **方法论**：严重性分级（CRITICAL / MAJOR / MINOR）+ 审稿人视角写作 checklist + 英语语法高频坑位表 + LaTeX 常见格式问题。
-- **产出**：按严重性排序的缺陷清单、每条配可行的修复建议，并明确**能在 72 小时内修完的子集**。
-- **对应 handbook 章节**：[3.5 写作细节与 Checklist](../handbook/03_Paper_Writing/3.5_写作细节与Checklist.md) · [1.1 如何评价一篇论文的质量](../handbook/01_Preliminary/1.1_如何评价一篇论文的质量.md)
-- **上游**：技术论文主线的终点；Benchmark 论文主线的终点。
+- **Positioning**: simulates a top-venue reviewer and audits a draft across five dimensions: macro logic, writing details, English grammar, LaTeX formatting, figure quality.
+- **When to trigger**:
+  - 3 to 5 days before the submission deadline, running the final pass
+  - Co-authors have stopped making suggestions; you need a cold-eyed full audit
+  - Rebuttal is drafted; you want another sweep against the "things reviewers will flag" catalogue
+- **Methodology**: severity tagging (CRITICAL / MAJOR / MINOR) + reviewer-style writing checklist + high-frequency English pitfalls + common LaTeX formatting mistakes.
+- **Output**: a severity-ranked defect list, each item paired with an actionable fix, with a clear **subset that is realistically fixable in 72 hours** called out.
+- **Matching handbook chapters**: [3.5 Writing details and checklist](../handbook/03_Paper_Writing/3.5_writing-details-and-checklist.md) · [1.1 How to evaluate paper quality](../handbook/01_Preliminary/1.1_how-to-evaluate-paper-quality.md)
+- **Upstream**: the endpoint of the technical-paper track; also the endpoint of the benchmark-paper track.
 
-### vibe-research-workflow — 贯穿始终的 AI 协作行为守则
+### vibe-research-workflow — the always-on rules for AI-assisted research
 
-- **定位**：AI 辅助科研的全流程指南，覆盖三条子流水线——Vibe Coding、Vibe Figure、Vibe Writing。
-- **什么时候触发**：
-  - 第一次用 Claude / Cursor / Codex 辅助写研究代码，不知道分工边界
-  - 要画图，纠结"用 AI 生成还是自己画"
-  - 写作时担心 LLM 代笔稀释了学术品味
-  - 总觉得"AI 在瞎写"——通常是行为守则没对齐
-- **核心原则**：**学术判断保留在人手里，把机械劳动交给 AI**；每次 AI 产出都要有明确的可复核证据；工具选型按任务类型落到具体清单。
-- **产出**：当前场景的推荐工具链、人机分工示意、常见失败模式对照表。
-- **对应 handbook 章节**：[5.1 Vibe Research 与 Vibe Coding 入门](../handbook/05_Vibe_Research/5.1_Vibe_Research与Vibe_Coding入门.md) · [5.2 实战经验分享](../handbook/05_Vibe_Research/5.2_李伯岩实战经验分享与会议纪要.md)
-- **用法特点**：与其它十个技能**正交**。不是第 N 步，而是你走每一步时都可以随时调用的协作规则。写作类请求（起草正文）是合法的：转给 paper-writer / intro-drafter，它们的证据纪律保证不编造实质内容；披露义务与逐段核验义务不变。
+- **Positioning**: a full-lifecycle guide for AI-assisted research, covering three sub-flows: Vibe Coding, Vibe Figure, Vibe Writing.
+- **When to trigger**:
+  - First time using Claude / Cursor / Codex to help with research code, unclear where the human-AI boundary is
+  - Drawing a figure and torn between "let AI generate it" and "draw it yourself"
+  - Worried the LLM is ghost-writing away your academic taste
+  - The output feels like "the AI is winging it" — usually the behavioural rules are not aligned
+- **Core principle**: **keep academic judgment in the human's hands, delegate mechanical labour to AI**; every AI output must come with checkable evidence; tool picks are per task type with a concrete shortlist.
+- **Output**: a recommended tool chain for the current scenario, a human-AI division-of-labour sketch, and a common-failure-mode catalogue.
+- **Matching handbook chapters**: [5.1 Vibe Research and Vibe Coding primer](../handbook/05_Vibe_Research/5.1_vibe-research-and-vibe-coding.md) · [5.2 Practitioner notes](../handbook/05_Vibe_Research/5.2_liboyan-practical-notes.md)
+- **How it fits**: **orthogonal** to the other ten skills. It is not step N; it is a rulebook you pull up at any step. Drafting requests are legitimate: they route to paper-writer / intro-drafter, whose evidence discipline forbids fabricated substance; disclosure and per-passage verification duties stay with the author.
 
-## 怎么用这些技能
+## How to actually use these skills
 
-### 安装为 Agent Skills（推荐）
+### Installed as Agent Skills (recommended)
 
-按顶层 README 的[快速开始](../README.md#快速开始-quick-start)装好之后，自然语言即可触发，不需要记任何命令。下面这类短语会自动命中对应技能：
+Follow the [Quick Start](../README.md#quick-start) in the top-level README. Once installed, natural language triggers are enough, no commands to memorise. The following phrasings route to the matching skill:
 
-- "帮我调研一下这个方向 / 做个文献综述" → `deep-research`
-- "帮我评估一下这个 idea" → `idea-evaluator`
-- "先帮我把论文的逻辑骨架搭出来" → `tech-paper-template`
-- "起草 Introduction / 我想写一下 Intro" → `intro-drafter`
-- "帮我把这个想法写成一段 Discussion / 写篇初稿" → `paper-writer`
-- "帮我润色这段 / 去掉 AI 味 / 中文稿翻成投稿英文" → `paper-polish`
-- "这张图应该怎么画 / 用什么工具画" → `figure-designer`
-- "把这张参考图重建成 draw.io / 生成可编辑 drawio" → `drawio-reconstruction`
-- "投稿前帮我审一遍 / 做最后的 final pass" → `pre-submission-reviewer`
-- "我想写一个 Benchmark 论文 / 我在做 evaluation" → `benchmark-paper-template`
-- "怎么用 AI 辅助我做研究" → `vibe-research-workflow`
+- "survey this direction for me / literature review" → `literature-deep-research`
+- "help me evaluate this idea" → `idea-evaluator`
+- "lock the paper's logical skeleton for me" → `tech-paper-template`
+- "draft the Introduction / I want to write the intro" → `intro-drafter`
+- "write this idea into a Discussion / draft the paper" → `paper-writer`
+- "polish this / strip the AI flavor / turn my Chinese draft into submission English" → `paper-polish`
+- "how should I draw this figure / what tool should I use" → `figure-designer`
+- "rebuild this reference image as draw.io / generate editable drawio" → `drawio-reconstruction`
+- "review the paper before I submit / final pass" → `pre-submission-reviewer`
+- "I am writing a benchmark paper / I am doing an evaluation paper" → `benchmark-paper-template`
+- "how do I use AI to assist my research" → `vibe-research-workflow`
 
-### 不安装也能用
+### Without installation
 
-每个技能目录下的 `SKILL.md`，本身就是一份可读的"结构化思考清单"。你可以：
-- 直接把 SKILL.md 贴到你用的任何 AI 助手里（Claude、GPT、DeepSeek、Kimi 等），当 system prompt 使用
-- 或者把它当成**一份静态 checklist**——不必借助任何 AI，拿笔和纸也能照着每一节逐项自查
+Every `SKILL.md` is itself a readable, structured thinking checklist. You can:
+- Paste SKILL.md into any AI assistant you use (Claude, GPT, DeepSeek, Kimi, and similar) as a system prompt
+- Or treat it as a **static checklist** — no AI needed; pen, paper, and the section list are enough
 
-`references/` 目录里还有更细的按需加载参考资料（比如 `idea-evaluator/references/five-dimensions.md` 是"更高更快更强"五维度的深度展开）。
+Each skill's `references/` directory carries on-demand depth. For example, `idea-evaluator/references/five-dimensions.md` is the full expansion of the Higher-Faster-Stronger-Cheaper-Broader framework.
 
-## 与 handbook 的对应关系总表
+## Skill-to-handbook cross reference
 
-| Skill | 主要对应 handbook 章节 |
+| Skill | Main handbook chapters |
 |---|---|
-| deep-research | 2.1（选题前的方向侦察，主体为新增研究侧能力） |
+| literature-deep-research | 2.1 (pre-topic reconnaissance; largely new research-side capability) |
 | idea-evaluator | 2.1 / 2.2 / 2.3 |
 | tech-paper-template | 3.1 / 3.3 |
 | intro-drafter | 3.2 |
@@ -240,14 +238,13 @@ Benchmark 管线比技术论文更强调阶段先后，每个环节都要先于�
 | pre-submission-reviewer | 3.5 / 1.1 |
 | vibe-research-workflow | 5.1 / 5.2 |
 
-**阅读顺序建议：handbook 先读一遍建立"道"的直觉，再回到本 README 按技能挑场景使用；具体执行交给 SKILL.md。**
+**Recommended reading order: read the handbook once to build intuition about the "way", then come back to this README to pick the skill for your scenario; leave execution to SKILL.md.**
 
-## 贡献与反馈
+## Contributing and feedback
 
-新增技能、修订 SKILL.md、补 references，或者想把你用这些技能写出的顶会论文分享回来——都欢迎。请先阅读顶层 [CONTRIBUTING.md](../CONTRIBUTING.md)；新技能的硬性约定写在那里。
+New skills, SKILL.md revisions, reference additions, or top-venue papers you wrote with these skills are all welcome. Please read the top-level [CONTRIBUTING.md](../CONTRIBUTING.md) first; the hard rules for new skills live there.
 
-有问题、建议、或想在自己的实验室推广 Supervisor-Skills，请发邮件给 Yuyu Luo (yuyuluo [AT] hkust-gz.edu.cn)。
+For questions, feedback, or to bring Supervisor-Skills to your own lab, please email Yuyu Luo at yuyuluo [AT] hkust-gz.edu.cn.
 
 ---
 
-[English](README.en.md) | [中文]
