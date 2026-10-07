@@ -1,6 +1,8 @@
 # Supervisor-Skills
 
-> A PhD-level academic research methodology distilled into eleven structured skills, covering research discovery, idea evaluation, paper planning, drafting, polishing, figure design and reconstruction, pre-submission review, and AI-assisted research workflow. Usable as a standalone Chinese curriculum at `handbook/`, as an English mirror at `handbook-en/`, or as Agent Skills under `skills/`.
+> A PhD-level academic research methodology distilled into eleven structured skills, covering research discovery, idea evaluation, paper planning, drafting, polishing, figure design and reconstruction, pre-submission review, and AI-assisted research workflow. Usable as a standalone English curriculum at `handbook/` or as Agent Skills under `skills/`.
+
+Adapted from https://github.com/HKUSTDial/Supervisor-Skills (Yuyu Luo and DIAL, HKUST (Guangzhou)), CC BY-NC-SA 4.0. Changes: skill `deep-research` renamed `literature-deep-research`; Chinese content translated into English. See CHANGELOG.md.
 
 Target audience: researchers writing papers for NeurIPS, ICML, ICLR, VLDB, SIGMOD, KDD, ACL, EMNLP, CVPR, and similar top venues.
 
@@ -9,22 +11,22 @@ Target audience: researchers writing papers for NeurIPS, ICML, ICLR, VLDB, SIGMO
 Paste the following prompt into your AI assistant:
 
 ```
-Help me install every skill under the skills/ directory from https://github.com/HKUSTDial/Supervisor-Skills. Treat each directory containing SKILL.md as a separate skill; do not install the repository root as one skill. If you are Codex, use $skill-installer.
+Help me install every skill under the skills/ directory from https://github.com/feliferr/Supervisor-Skills. Treat each directory containing SKILL.md as a separate skill; do not install the repository root as one skill. If you are Codex, use $skill-installer.
 ```
 
 To install only Draw.io reconstruction:
 
 ```
-Use $skill-installer to install https://github.com/HKUSTDial/Supervisor-Skills/tree/main/skills/drawio-reconstruction.
+Use $skill-installer to install https://github.com/feliferr/Supervisor-Skills/tree/main/skills/drawio-reconstruction.
 ```
 
-See [README.md](README.md) (Chinese) or [README.en.md](README.en.md) for full details.
+See [README.md](README.md) for full details.
 
 ## Skills (v2.1.0)
 
 Eleven anchor skills under `skills/` cover the full paper lifecycle.
 
-- [deep-research](skills/deep-research/SKILL.md): survey-grade literature investigation with multi-perspective search, per-citation verification, MECE synthesis, and a report that answers explicit research questions.
+- [literature-deep-research](skills/literature-deep-research/SKILL.md): survey-grade literature investigation with multi-perspective search, per-citation verification, MECE synthesis, and a report that answers explicit research questions.
 - [idea-evaluator](skills/idea-evaluator/SKILL.md): scores a research idea on the five-dimension framework (Higher / Faster / Stronger / Cheaper / Broader) plus lifecycle-capability matching, fatal-flaws audit, and paradigm-shift probe; non-STEM ideas route to substitute frameworks.
 - [vibe-research-workflow](skills/vibe-research-workflow/SKILL.md): Vibe Coding, Vibe Figure, Vibe Writing tool choice and six behavioral rules for AI-assisted research.
 - [tech-paper-template](skills/tech-paper-template/SKILL.md): technical-paper thinking table with four self-consistency checks and Technique vs New Problem positioning.
@@ -38,7 +40,7 @@ Eleven anchor skills under `skills/` cover the full paper lifecycle.
 
 ## Reader curriculum
 
-The original Chinese curriculum by the methodology author lives at `handbook/`. An English mirror lives at `handbook-en/`. Both are organized into six chapters.
+The curriculum, translated into English from the methodology author's Chinese original, lives at `handbook/`. It is organized into six chapters.
 
 - `handbook/01_Preliminary/` — evaluating paper quality from a reviewer's perspective.
 - `handbook/02_Idea_Generation/` — idea lifecycle, five-dimension thinking, disruptive innovation.

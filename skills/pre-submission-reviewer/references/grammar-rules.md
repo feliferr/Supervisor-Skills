@@ -109,7 +109,7 @@ Common Chinglish patterns to flag:
 
 - Direct translation of Chinese idioms that do not carry in
   English.
-- Overuse of "very" (赶很多中文用户会用 "very"; often unnecessary).
+- Overuse of "very" (many Chinese-speaking users overuse "very"; often unnecessary).
 - Use of the same word several times in short succession where
   a synonym would be clearer.
 - Over-hedged statements ("it may be the case that perhaps the

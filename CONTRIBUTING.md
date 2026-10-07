@@ -4,7 +4,7 @@ This repository welcomes issues, pull requests, and discussions. Please read thi
 
 ## Scope
 
-The current skill set contains eleven anchor skills under `skills/`: `idea-evaluator`, `deep-research`, `vibe-research-workflow`, `intro-drafter`, `paper-writer`, `tech-paper-template`, `benchmark-paper-template`, `paper-polish`, `figure-designer`, `drawio-reconstruction`, `pre-submission-reviewer`. Adding a new skill requires:
+The current skill set contains eleven anchor skills under `skills/`: `idea-evaluator`, `literature-deep-research`, `vibe-research-workflow`, `intro-drafter`, `paper-writer`, `tech-paper-template`, `benchmark-paper-template`, `paper-polish`, `figure-designer`, `drawio-reconstruction`, `pre-submission-reviewer`. Adding a new skill requires:
 
 1. Discussion via issue first; confirm the skill fills a real gap and is not covered by an existing skill.
 2. Clear attribution for any content not derived from `handbook/`.
@@ -23,7 +23,7 @@ Each skill directory at `skills/<name>/` contains:
 - SKILL.md body under 500 lines.
 - `description` between 40 and 80 words, written in third person, contains at least one "Use when..." clause.
 - No em-dash (U+2014) in `SKILL.md` or `references/*.md`; use commas or periods.
-- No Chinese characters in SKILL.md (the canonical Chinese curriculum lives at `handbook/`; English mirror at `handbook-en/`).
+- No Chinese characters in SKILL.md (the curriculum lives at `handbook/`, written in English).
 - All `See: references/X.md` pointers must resolve to existing files.
 - No nested references (`SKILL.md -> refs/a.md -> refs/b.md` is illegal).
 - Reference files shared across skills are duplicated per consuming skill (skills stay self-contained); each copy carries a header naming its canonical, and copies must stay byte-identical to the canonical below the header (`python scripts/check_shared_sync.py`).
@@ -41,9 +41,13 @@ The linter exits non-zero on any violation and is invoked by `.github/workflows/
 
 ## Bilingual content
 
-The Chinese `handbook/` is the canonical curriculum, preserved verbatim from the methodology author. The `handbook-en/` directory is a faithful English mirror and follows the same chapter and file structure. Keep the two trees symmetric in any PR that edits the curriculum.
+The `handbook/` directory is the curriculum, translated into English from the methodology author's Chinese original (`HKUSTDial/PhD.Skills`) with file names translated and the chapter structure preserved.
 
-When re-syncing `handbook/` from upstream `HKUSTDial/PhD.Skills`, the only permitted local edit remains the image-path rewrite; its target is now `../../assets/` (images sit directly under `assets/`, no `images/` subfolder). Chapter-local asset references (`./assets/...`) stay as upstream.
+When re-syncing `handbook/` from upstream, translate the changed chapters and keep image paths pointing at `../../assets/` (images sit directly under `assets/`, no `images/` subfolder). Chapter-local asset references (`./assets/...`) stay as upstream.
+
+## Provenance
+
+This repository is an adapted version of [HKUSTDial/Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills). Keep the attribution notices in `README.md`, `LICENSE`, and `llms.txt` intact, and record any further changes to the original content in `CHANGELOG.md`.
 
 ## License
 

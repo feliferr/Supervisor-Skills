@@ -1,40 +1,40 @@
-# Rebuttal 指导完整性检查清单
+# Rebuttal Guidance Completeness Checklist
 
-在告知用户指导完成前，逐项核对。
+Check every item before telling the user the guidance is complete.
 
-## 完整性核查
+## Completeness check
 
-| # | 检查项 | 通过 |
-|---|--------|------|
-| 1 | 用户输入中的每条 W/Q 都有对应的指导块 | ☐ |
-| 2 | 每条 concern 已标注类型 | ☐ |
-| 3 | 已注明匹配到的心态簇及置信度 | ☐ |
-| 4 | 每条 concern 已标注推荐的策略维度 | ☐ |
-| 5 | 没有捏造的实验数字（未经论文验证的数据标注 [TO VERIFY]） | ☐ |
-| 6 | 澄清型和需要新实验型已明确区分 | ☐ |
-| 7 | 防御性表述已在语气建议中标记 | ☐ |
-| 8 | 过度承诺风险已在 overpromise_risk 高的条目中标记 | ☐ |
+| # | Check | Pass |
+|---|-------|------|
+| 1 | Every W/Q in the user's input has a corresponding guidance block | ☐ |
+| 2 | Every concern has been tagged with a type | ☐ |
+| 3 | The matched mindset cluster and its confidence are stated | ☐ |
+| 4 | Every concern has a recommended strategy dimension | ☐ |
+| 5 | No fabricated experimental numbers (data not verified against the paper is marked [TO VERIFY]) | ☐ |
+| 6 | Clarification-type and new-experiment-type concerns are clearly distinguished | ☐ |
+| 7 | Defensive phrasing is flagged in the tone notes | ☐ |
+| 8 | Overpromise risk is flagged on items where overpromise_risk is high | ☐ |
 
-## 语气红线（必须在指导中标记）
+## Tone red lines (must be flagged in the guidance)
 
-- "You misunderstood / You missed / This is trivial": 攻击性，需改写
-- "Significantly / clearly / undoubtedly": 无数字支撑时是空话
-- "We will fully address in future work": 在没有任何当下行动时是回避信号
-- 过度道歉 ("We sincerely apologize for..."): 削弱论点
+- "You misunderstood / You missed / This is trivial": aggressive, must be rewritten
+- "Significantly / clearly / undoubtedly": empty words when no numbers back them up
+- "We will fully address in future work": an avoidance signal when there is no action taken now
+- Excessive apology ("We sincerely apologize for..."): weakens the argument
 
-## 低开放度审稿人的特别提示
+## Special note for low-openness reviewers
 
-若匹配到的心态**历史涨分率 < 15%**（见 mindset-library.md）：
+If the matched mindset has a **historical score-increase rate < 15%** (see mindset-library.md):
 
-- 告知用户：单靠文字说服成功率有限，优先考虑提供一个决定性的新实验。
-- 建议现实目标：澄清最核心的误解 + 一个最小可信的新证据。
-- 不要鼓励用户写过长的 rebuttal: 简洁、有力优于面面俱到。
+- Tell the user: text alone has limited persuasive power, so prioritize providing one decisive new experiment.
+- Suggest a realistic goal: clarify the most central misunderstanding + provide one minimal, credible piece of new evidence.
+- Do not encourage the user to write an overly long rebuttal: concise and forceful beats exhaustive.
 
-## 常见失误提醒
+## Common mistakes
 
-| 错误模式 | 表现 | 修正方向 |
-|---------|------|---------|
-| 过长澄清 | 对 evidence_gap 写了 5 段解释但无新数据 | 压缩至 2 句，重点指向新结果 |
-| 全面承认 | 对 scope_claim 过度让步 | 承认后立即给出"有限范围内贡献成立"的论点 |
-| 回避 novelty | 用"我们的方法更实用"回应"贡献不够新颖" | 给出与最相关工作的具体技术差异 |
-| 忽视 Questions | 把 Q 当 W 用长篇证明回应 | Q 通常只需 2–3 句 + 指针 |
+| Error pattern | Symptom | Fix |
+|---------------|---------|-----|
+| Over-long clarification | Five paragraphs of explanation for an evidence_gap with no new data | Compress to 2 sentences and point to the new results |
+| Blanket concession | Conceding too much on a scope_claim | After conceding, immediately argue that "the contribution holds within the narrowed scope" |
+| Dodging novelty | Answering "contribution is not novel enough" with "our method is more practical" | State the concrete technical differences from the most closely related work |
+| Neglecting Questions | Treating a Q like a W and answering with a long proof | A Q usually needs only 2–3 sentences + a pointer |

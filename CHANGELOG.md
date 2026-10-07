@@ -4,6 +4,41 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Attribution
+
+- Made explicit that this repository is an adaptation of
+  [HKUSTDial/Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills)
+  (notices added to `README.md`, `LICENSE`, `llms.txt`, and
+  `CONTRIBUTING.md`); install prompts now point to this repository.
+
+### Removed
+
+- The Chinese `README.md`, `skills/README.md`, and
+  `skills/drawio-reconstruction/README.zh-CN.md`. The English `README.en.md`
+  and `skills/README.en.md` were renamed to `README.md` and
+  `skills/README.md`, so each location has a single English README.
+- `handbook-en/`: the earlier condensed English mirror, redundant now that
+  `handbook/` is fully in English. All links now point to `handbook/`.
+
+### Changed
+
+- Renamed skill `deep-research` to `literature-deep-research` to avoid a
+  name collision with the `deep-research` skills already installed in
+  common Claude accounts (the Anthropic skill and the
+  `academic-research-skills` plugin). Directory, `name` frontmatter,
+  READMEs, `llms.txt`, and `CONTRIBUTING.md` updated.
+- Translated the Chinese `handbook/` into English: all chapter file
+  names (including the companion PDF, now
+  `phd-research-onboarding-guide.pdf`) and contents. The PDF's own
+  contents remain in Chinese. Links in the READMEs and in
+  `idea-evaluator/references/paradigm-examples.md` updated.
+- Translated the Chinese reference files of `rebuttal-guidance`
+  (`references/*.md`) into English, and the remaining inline Chinese
+  glosses in `benchmark-paper-template`, `pre-submission-reviewer`, and
+  `vibe-research-workflow`.
+
 ## [2.1.0] - 2026-07-10
 
 ### Added

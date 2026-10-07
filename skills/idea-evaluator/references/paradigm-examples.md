@@ -19,7 +19,7 @@ show what a disruptive reframing looks like in the wild and to
 calibrate paradigm-shift analysis against real precedents.
 
 Examples 2, 3, and 4 appear in
-`handbook/02_Idea_Generation/2.3_进阶_如何做颠覆式创新.md` as
+`handbook/02_Idea_Generation/2.3_disruptive-innovation.md` as
 illustrations for the principle they anchor.
 
 ## 2. Example 1: Transformer architecture
